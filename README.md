@@ -1,0 +1,1 @@
+This service will serve the main product description and micro-frontend rendering this data to the client.
