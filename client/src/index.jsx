@@ -8,7 +8,6 @@ export default class Main extends Component {
   render(){
     return (
       <React.Fragment>
-      <h1>I'm different!</h1>
       <img src="http://i.picasion.com/gl/89/bp0C.gif" />
       </React.Fragment>
     )
