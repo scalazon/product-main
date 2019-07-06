@@ -9,7 +9,7 @@
     "dev-server": "nodemon -r dotenv/config server/server.js",
     "dev-client": "webpack-dev-server  --open --color ",
     "build": "webpack",
-    "start": "node server/server.js"
+    "start": "node server/index.js"
   },
   "repository": {
     "type": "git",
