@@ -1,6 +1,6 @@
 const MongoClient = require('mongodb').MongoClient;
 const mongoose = require('mongoose');
-const {dbURI} = require('../config.js');
+const dbURI = process.env.DBURI || require('../config.js').dbURI
 
 const conn = mongoose.connect(dbURI, {useNewUrlParser: true});
 
