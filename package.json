@@ -7,11 +7,10 @@
     "test": "jest --detectOpenHandles --forceExit",
     "watch": "webpack --watch",
     "dev-server": "nodemon -r dotenv/config server/server.js",
-    "dev-client": "webpack-dev-server  --open --color ",
     "build": "webpack",
     "start": "node server/index.js"
   },
-  "jest" : {
+  "jest": {
     "testEnvironment": "node"
   },
   "repository": {
@@ -25,11 +24,13 @@
   },
   "homepage": "https://github.com/hackmazon/product-main#readme",
   "dependencies": {
+    "eslint": "^6.0.1",
     "express": "^4.17.1",
     "mongodb": "^3.2.7",
     "mongoose": "^5.6.4",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
@@ -37,6 +38,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.6",
     "dotenv": "^8.0.0",
     "eslint": "^6.0.1",
     "eslint-config-airbnb": "^17.1.1",
@@ -51,6 +53,7 @@
     "superagent": "^5.1.0",
     "supertest": "^4.0.2",
     "webpack": "^4.35.2",
-    "webpack-cli": "^3.3.5"
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
   }
 }
