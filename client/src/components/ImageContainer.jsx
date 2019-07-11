@@ -18,8 +18,8 @@ export default function ImageContainer(props){
 
   return (
     <ImageDiv>
-      <ImageCol />
-      <MainImage src={`https://hackmazon-images.s3.amazonaws.com/Images/${props.mainIng}`}/>
+      <ImageCol data={props.data} />
+      <MainImage src={`https://hackmazon-images.s3.amazonaws.com/Images/${props.mainImg}`}/>
     </ImageDiv>
   )
 }

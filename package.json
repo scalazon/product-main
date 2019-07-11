@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/hackmazon/product-main#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "eslint": "^6.0.1",
     "express": "^4.17.1",
     "mongodb": "^3.2.7",

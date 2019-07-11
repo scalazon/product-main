@@ -21,7 +21,7 @@ const essentialProps = ['asin', 'productTitle', 'bulletPoints', 'price', 'catego
 const clean = (product)=> {
   if (!Array.isArray(product.bulletPoints)){
       product.bulletPoints = product.bulletPoints.split('\n');
-    }
+  }
   if (product.price[0] === '$'){
     product.price = product.price.slice(1);
   }

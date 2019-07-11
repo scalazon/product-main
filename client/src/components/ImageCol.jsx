@@ -16,7 +16,9 @@ const ImgColDiv = styled.div`
 export default function ImageCol(props){
   return (
       <ImgColDiv>
-        <Thumbnail src="https://hackmazon-images.s3.amazonaws.com/Images/B002WVJA5G_1.jpg" />
+        {props.data.imgURLs.map((imgURL, idx)=> (
+          <Thumbnail key={props.data.ASIN + 'thumbnail' + idx} src={`https://hackmazon-images.s3.amazonaws.com/Images/${imgURL}`} />
+        ))}
       </ImgColDiv>
     )
 }

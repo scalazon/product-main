@@ -10,18 +10,19 @@ export default function Details(props){
   const HR = styled.hr``;
   const Bullets = styled.ul``;
   const Point = styled.li``;
-
   return (
     <DetailsDiv>
-      <DetailsHead />
+      <DetailsHead productTitle={props.data.productTitle}/>
       <HR />
       <Price>
         {props.data.price}
       </Price>
+      <ul>
+      </ul>
       <Bullets>
-      {props.bulletPoints.map((point, idx) => {
-        <Point key={props.data.ASIN + 'bullet' + idx}>{point}</Point>
-      })}
+        {props.data.bulletPoints.map((point, idx) => (
+          <Point key={props.data.ASIN + 'bullet' + idx}>{point}</Point>
+        ))}
       </Bullets>
     </DetailsDiv>
   )
