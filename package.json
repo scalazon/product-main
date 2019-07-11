@@ -6,7 +6,6 @@
   "scripts": {
     "test": "jest --detectOpenHandles --forceExit",
     "watch": "webpack --watch",
-    "dev-server": "nodemon -r dotenv/config server/server.js",
     "build": "webpack",
     "start": "node server/index.js"
   },

@@ -9,24 +9,34 @@ export default class Main extends Component {
     super(props)
     this.apiURL = 'http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/products/';
     this.imagesURL = 'https://hackmazon-images.s3.amazonaws.com/Images/';
+    this.defaultASIN = 'B01KUGJDB0';
     this.state = {
-      mainImg: 'B002WVJA5G_1.jpg'
+      mainImg: 'B01KUGJDB0_1.jpg',
+      data: null
     }
+    getData(this.defaultASIN);
   }
 
   componentDidMount(){
-    // console.log("Main mounted");
-    // var bc = new BroadcastChannel('product-change');
-    // bc.onmessage = function (ev) { console.log('Changing the product, boss!'); }
-    // ReactDOM.findDOMNode(this).addEventListener('custom-event', (e) => console.log('Main heard', e.detail), true);
-    // ReactDOM.findDOMNode(this).addEventListener('custom-event', (e) => console.log('Main heard', e.detail);
+    var bc = new BroadcastChannel('product-change');
+    bc.onmessage = ev => (getData(ev.data));
+  }
+
+  getData(ASIN){
+    fetch(this.apiURL + this.defaultASIN)
+      .then(data => this.setState({data}));
   }
 
   render(){
+    const data = this.state.data;
+    const mainImg = this.state.mainImg;
     return (
       <React.Fragment>
+      {data ? (
       <img src="http://i.picasion.com/gl/89/bp0C.gif" />
-      <ImageContainer />
+      <ImageContainer images={data.imgURLs} mainImg={mainImg} />
+      <Details data={data} />
+      ) : ()}
       </React.Fragment>
     )
   }
