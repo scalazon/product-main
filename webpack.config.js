@@ -18,6 +18,38 @@ module.exports = {
           presets: ['@babel/preset-react', '@babel/preset-env'],
           plugins: ["babel-plugin-styled-components"]
         }
+      },
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true,
+              modules: {
+                localIdentName: "[local]___[hash:base64:5]"
+              }
+            }
+          },
+          {
+            loader: "less-loader"
+          }
+        ]
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+            }
+          }
+        ]
       }
     ]
   }
