@@ -13,14 +13,14 @@ export default class Main extends Component {
     super(props)
     // this.apiURL = 'http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/products/';
     this.apiURL = '/products/';
-    this.imagesURL = 'https://hackmazon-images.s3.amazonaws.com/Images/';
+    // this.imagesURL = 'https://hackmazon-images.s3.amazonaws.com/Images/';
     this.defaultASIN = 'B01KUGJDB0';
     this.state = {
-      mainImg: 'B01KUGJDB0_1.jpg',
+      // mainImg: 'B01KUGJDB0_1.jpg',
       data: null,
       isLoading: true
     }
-    this.handleThumbnailHover = this.handleThumbnailHover.bind(this);
+    // this.handleThumbnailHover = this.handleThumbnailHover.bind(this);
     this.getData(this.defaultASIN);
   }
 
@@ -41,10 +41,10 @@ export default class Main extends Component {
       .catch(console.error);
   }
 
-  handleThumbnailHover(e){
-    const mainImg = e.target.id;
-    this.setState({mainImg});
-  }
+  // handleThumbnailHover(e){
+  //   const mainImg = e.target.id;
+  //   this.setState({mainImg});
+  // }
 
   render(){
     const data = this.state.data;
@@ -79,7 +79,6 @@ export default class Main extends Component {
         <GlobalStyles />
           <ImageContainer
             data={data}
-            mainImg={mainImg} 
             onHover={this.handleThumbnailHover}
           />
           <Details data={data} />

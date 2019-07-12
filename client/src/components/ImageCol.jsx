@@ -28,15 +28,15 @@ const ImgColDiv = styled.div`
 export default function ImageCol(props){
   return (
       <ImgColDiv>
-        {props.data.imgURLs.map((imgURL, idx)=> (
+        {props.imgURLs.map((imgURL, idx)=> (
           (imgURL === props.mainImg) ? (
             <SelectedThumbnail
-              key={props.data.ASIN + 'thumbnail' + idx}
+              key={props.ASIN + 'thumbnail' + idx}
               src={`https://hackmazon-images.s3.amazonaws.com/Images/${imgURL}`}
             />
           ):(
             <Thumbnail
-              key={props.data.ASIN + 'thumbnail' + idx}
+              key={props.ASIN + 'thumbnail' + idx}
               src={`https://hackmazon-images.s3.amazonaws.com/Images/${imgURL}`}
               id={imgURL}
               onMouseOver={props.onHover}
