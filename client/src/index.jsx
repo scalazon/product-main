@@ -23,7 +23,7 @@ export default class Main extends Component {
     var bc = new BroadcastChannel('product-change');
     bc.onmessage = ev => this.getData(ev.data);
     bc.onmessage = ev => console.log(ev.detail);;
-    console.log(bc);
+    // console.log(bc);
   }
 
   getData(ASIN){
