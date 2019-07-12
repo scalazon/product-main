@@ -4,7 +4,9 @@ import styled, { createGlobalStyle } from 'styled-components';
 import ImageContainer from './components/ImageContainer.jsx';
 import Details from './components/Details.jsx';
 // import Lato from './resources/Lato-Regular.ttf';
-import Ember from './resources/Amazon-Ember-Regular.ttf';
+import EmberLt from './resources/AmazonEmber_Lt.ttf';
+import EmberBd from './resources/AmazonEmber_Bd.ttf';
+import EmberRg from './resources/AmazonEmber_Rg.ttf';
 
 export default class Main extends Component {
   constructor(props){
@@ -50,11 +52,19 @@ export default class Main extends Component {
     const isLoading = this.state.isLoading;
     const GlobalStyles = createGlobalStyle`
       @font-face {
-        font-family: Ember;
-        src: url(${Ember});
+        font-family: EmberLt;
+        src: url(${EmberLt});
+      }
+      @font-face {
+        font-family: EmberBd;
+        src: url(${EmberBd});
+      }
+      @font-face {
+        font-family: EmberRg;
+        src: url(${EmberRg});
       }
       body {
-        font-family: Ember, Arial, sans-serif;
+        font-family: EmberLt, Arial, sans-serif;
         font-weight: 400;
       }
     `;
