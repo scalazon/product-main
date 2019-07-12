@@ -5,11 +5,16 @@ import CustomerResponse from './CustomerResponse.jsx';
 import styled from 'styled-components';
 
 export default function Details(props){
-  const DetailsDiv = styled.div``;
+  const DetailsDiv = styled.div`
+  padding-left: 30px;
+  padding-left: 30px;
+  `;
+
   const Price = styled.span``;
   const HR = styled.hr``;
   const Bullets = styled.ul``;
   const Point = styled.li``;
+
   return (
     <DetailsDiv>
       <DetailsHead productTitle={props.data.productTitle}/>

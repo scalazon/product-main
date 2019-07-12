@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import styled, { createGlobalStyle } from 'styled-components';
 import ImageContainer from './components/ImageContainer.jsx';
 import Details from './components/Details.jsx';
-// import ImageCol from './components/ImageCol.jsx'
-// import MainImage from './components/MainImage.jsx'
+// import Lato from './resources/Lato-Regular.ttf';
+import Ember from './resources/Amazon-Ember-Regular.ttf';
 
 export default class Main extends Component {
   constructor(props){
@@ -17,12 +18,15 @@ export default class Main extends Component {
       data: null,
       isLoading: true
     }
+    this.handleThumbnailHover = this.handleThumbnailHover.bind(this);
     this.getData(this.defaultASIN);
   }
 
   componentDidMount(){
     var bc = new BroadcastChannel('product-change');
-    bc.onmessage = ev => (this.getData(ev.data));
+    bc.onmessage = ev => this.getData(ev.data);
+    bc.onmessage = ev => console.log(ev.detail);;
+    console.log(bc);
   }
 
   getData(ASIN){
@@ -35,19 +39,41 @@ export default class Main extends Component {
       .catch(console.error);
   }
 
+  handleThumbnailHover(e){
+    const mainImg = e.target.id;
+    this.setState({mainImg});
+  }
+
   render(){
     const data = this.state.data;
     const mainImg = this.state.mainImg;
     const isLoading = this.state.isLoading;
+    const GlobalStyles = createGlobalStyle`
+      @font-face {
+        font-family: Ember;
+        src: url(${Ember});
+      }
+      body {
+        font-family: Ember, Arial, sans-serif;
+        font-weight: 400;
+      }
+    `;
+    const MainDiv = styled.div`
+      display: flex;
+    `;
 
     return (isLoading ? (
         <div>Loading...</div>
       ) : (
-        <React.Fragment>
-        <img src="http://i.picasion.com/gl/89/bp0C.gif" />
-        <ImageContainer data={data} mainImg={mainImg} />
-        <Details data={data} />
-        </React.Fragment>
+        <MainDiv>
+        <GlobalStyles />
+          <ImageContainer
+            data={data}
+            mainImg={mainImg} 
+            onHover={this.handleThumbnailHover}
+          />
+          <Details data={data} />
+        </MainDiv>
       )
     )
   }
