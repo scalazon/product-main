@@ -3,7 +3,12 @@ import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 
 export default function DetailsHead(props){
+  const Title = styled.h2`
+    color: #555;
+    font-size: 21px;
+    line-height: 1.3;
+  `
   return (
-    <h1>{props.productTitle}</h1>
+    <Title>{props.productTitle}</Title>
   )
 }
