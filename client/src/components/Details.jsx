@@ -10,10 +10,10 @@ export default function Details(props){
   padding-left: 30px;
   `;
 
-  const Price = styled.span``;
-  const HR = styled.hr``;
-  const Bullets = styled.ul``;
-  const Point = styled.li``;
+   const Price = styled.span``;
+   const HR = styled.hr``;
+   const Bullets = styled.ul``;
+   const Point = styled.li``;
 
   return (
     <DetailsDiv>

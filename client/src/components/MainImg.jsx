@@ -7,21 +7,8 @@ export default function MainImg (props) {
      width: 30vw;
      min-width: 285px;
      height: auto;
-     max-height: 450px;
      margin: 25px;
    `;
-     // overflow: hidden;
-     // overflow-x: visible;
-     // overflow-y: hidden;
-    // <div className="fluid__image-container">
-    // </div>
-
-  // const MainImage = styled.img`
-  //   width: 30vw;
-  //   min-width: 285px;
-  //   height: auto;
-  //   margin: 25px;
-  // `;
 
   return (
     <ImgContainer>
@@ -34,8 +21,7 @@ export default function MainImg (props) {
             border: '1px solid #ccc'
           },
           imageStyle: {
-            position: 'relative',
-            top: '50%'
+           
           }
         },
         largeImage: {
