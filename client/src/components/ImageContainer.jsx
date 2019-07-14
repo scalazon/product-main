@@ -27,14 +27,6 @@ export default class ImageContainer extends Component {
       display: inline-flex;
     `;
 
-     // const MainImage = styled.img`
-     //    width: 30vw;
-     //    min-width: 285px;
-     //    height: auto;
-     //    margin: 25px;
-     // `;
-    // <MainImage src={`https://hackmazon-images.s3.amazonaws.com/Images/${this.state.mainImg}`}/>
-
     return (
       <React.Fragment>
         <ImageCol
@@ -43,7 +35,21 @@ export default class ImageContainer extends Component {
           mainImg={this.state.mainImg}
           onHover={this.handleThumbnailHover}
         />
-        <MainImg mainImg={this.state.mainImg} />
+        <img
+          id="HiddenImg"
+          src={`https://hackmazon-images.s3.amazonaws.com/Images/${this.state.mainImg}`}
+          style={{display: 'none'}}
+          onLoad={(e) => {
+            this.setState({
+              bigHeight: e.target.height,
+              bigWidth: e.target.width
+            })
+          }}
+        />
+        <MainImg
+          bigWidth={this.state.bigWidth}
+          bigHeight={this.state.bigHeight}
+          mainImg={this.state.mainImg} />
       </React.Fragment>
     )
   }

@@ -22,11 +22,11 @@ export default function Details(props){
       <Price>
         {props.data.price}
       </Price>
-      <ul>
-      </ul>
       <Bullets>
         {props.data.bulletPoints.map((point, idx) => (
+          (point !== '') ? (
           <Point key={props.data.ASIN + 'bullet' + idx}>{point}</Point>
+          ) : (null)
         ))}
       </Bullets>
     </DetailsDiv>

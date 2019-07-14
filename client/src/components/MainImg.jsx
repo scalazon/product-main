@@ -3,12 +3,15 @@ import styled from 'styled-components';
 import ReactImageMagnify from 'react-image-magnify';
 
 export default function MainImg (props) {
-   const ImgContainer = styled.div`
-     width: 30vw;
-     min-width: 285px;
-     height: auto;
-     margin: 25px;
-   `;
+  const ImgContainer = styled.div`
+    width: 30vw;
+    min-width: 285px;
+    height: auto;
+    margin: 25px;
+  `;
+
+  let bigHeight = props.bigHeight;
+  let bigWidth = props.bigWidth;
 
   return (
     <ImgContainer>
@@ -26,8 +29,13 @@ export default function MainImg (props) {
         },
         largeImage: {
           src: `https://hackmazon-images.s3.amazonaws.com/Images/${props.mainImg}`,
-          width: 1200,
-          height: 1800
+          width: bigWidth,
+          height: bigHeight
+        },
+        enlargedImageContainerStyle: {
+          width: '50vw',
+          height: '30vh',
+          backgroundColor: 'white'
         },
         shouldUsePositiveSpaceLens: true
       }} />
