@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import ImageCol from './ImageCol.jsx';
+import MainImg from './MainImg.jsx';
+
 
 export default class ImageContainer extends Component {
   constructor(props){
@@ -26,12 +27,13 @@ export default class ImageContainer extends Component {
       display: inline-flex;
     `;
 
-    const MainImage = styled.img`
-      width: 30vw;
-      min-width: 285px;
-      height: auto;
-      margin: 25px;
-    `;
+    // const MainImage = styled.img`
+    //   width: 30vw;
+    //   min-width: 285px;
+    //   height: auto;
+    //   margin: 25px;
+    // `;
+    // <MainImage src={`https://hackmazon-images.s3.amazonaws.com/Images/${this.state.mainImg}`}/>
 
     return (
       <ImageDiv>
@@ -41,7 +43,7 @@ export default class ImageContainer extends Component {
           mainImg={this.state.mainImg}
           onHover={this.handleThumbnailHover}
         />
-        <MainImage src={`https://hackmazon-images.s3.amazonaws.com/Images/${this.state.mainImg}`}/>
+        <MainImg mainImg={this.state.mainImg} />
       </ImageDiv>
     )
   }
