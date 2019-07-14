@@ -27,16 +27,16 @@ export default class ImageContainer extends Component {
       display: inline-flex;
     `;
 
-    // const MainImage = styled.img`
-    //   width: 30vw;
-    //   min-width: 285px;
-    //   height: auto;
-    //   margin: 25px;
-    // `;
+     // const MainImage = styled.img`
+     //    width: 30vw;
+     //    min-width: 285px;
+     //    height: auto;
+     //    margin: 25px;
+     // `;
     // <MainImage src={`https://hackmazon-images.s3.amazonaws.com/Images/${this.state.mainImg}`}/>
 
     return (
-      <ImageDiv>
+      <React.Fragment>
         <ImageCol
           ASIN={this.ASIN}
           imgURLs={this.imgURLs}
@@ -44,7 +44,7 @@ export default class ImageContainer extends Component {
           onHover={this.handleThumbnailHover}
         />
         <MainImg mainImg={this.state.mainImg} />
-      </ImageDiv>
+      </React.Fragment>
     )
   }
 }

@@ -60,6 +60,7 @@ export default class Main extends Component {
     `;
     const MainDiv = styled.div`
       display: flex;
+      position: relative;
     `;
 
     return (isLoading ? (
