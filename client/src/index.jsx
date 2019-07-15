@@ -41,7 +41,7 @@ export default class Main extends Component {
       // }
 
   getData(ASIN){
-    return fetch(this.apiURL + this.defaultASIN)
+    return fetch(this.apiURL + ASIN)
       .then(function(response) {
         return response.json();
       })
