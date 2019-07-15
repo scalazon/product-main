@@ -4,6 +4,7 @@ import ReactImageMagnify from 'react-image-magnify';
 
 export default function MainImg (props) {
   const ImgContainer = styled.div`
+    box-sizing: content-box !important;
     width: 30vw;
     min-width: 285px;
     height: auto;

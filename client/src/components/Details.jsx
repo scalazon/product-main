@@ -8,6 +8,7 @@ export default function Details(props){
   const DetailsDiv = styled.div`
   padding-left: 30px;
   padding-left: 30px;
+  box-sizing: content-box !important;
   `;
 
    const Price = styled.span``;

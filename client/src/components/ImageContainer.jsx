@@ -25,6 +25,7 @@ export default class ImageContainer extends Component {
   render(){
     const ImageDiv = styled.div`
       display: inline-flex;
+      box-sizing: content-box !important;
     `;
 
     return (

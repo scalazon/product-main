@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 
 const ImgColDiv = styled.div`
+  box-sizing: content-box !important;
   display: inline-flex;
   flex-direction: column;
   width: 50px;
