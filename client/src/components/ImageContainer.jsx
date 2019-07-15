@@ -12,7 +12,7 @@ export default class ImageContainer extends Component {
     
     this.ASIN = props.data.ASIN;
     this.state = {
-      mainImg: 'B01KUGJDB0_1.jpg',
+      mainImg: this.imgURLs[0],
     }
     this.handleThumbnailHover = this.handleThumbnailHover.bind(this);
   }
