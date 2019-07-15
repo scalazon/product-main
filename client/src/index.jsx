@@ -16,15 +16,19 @@ export default class Main extends Component {
       data: null,
       isLoading: true
     }
+    this.getData = this.getData.bind(this)
     this.getData(this.defaultASIN);
   }
 
   componentDidMount(){
     var bc = new BroadcastChannel('product-change');
-    bc.onmessage = ev => this.getData(ev.data);
-    bc.onmessage = ev => console.log(ev);
-    bc.onmessage = ev => console.log(ev.detail);
-    bc.onmessage = ev => console.log(ev.data);
+    bc.onmessage = (ev) => {
+      console.log('i heard', ev);
+      this.getData(ev.data)
+    };
+    // bc.onmessage = ev => console.log('ev', ev);
+    // bc.onmessage = ev => console.log('ev.detail', ev.detail);
+    // bc.onmessage = ev => console.log('ev.data', ev.data);
     // console.log(bc);
   }
       // @font-face {
