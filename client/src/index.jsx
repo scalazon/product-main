@@ -26,10 +26,6 @@ export default class Main extends Component {
       console.log('i heard', ev);
       this.getData(ev.data)
     };
-    // bc.onmessage = ev => console.log('ev', ev);
-    // bc.onmessage = ev => console.log('ev.detail', ev.detail);
-    // bc.onmessage = ev => console.log('ev.data', ev.data);
-    // console.log(bc);
   }
       // @font-face {
       //   font-family: EmberBd;
@@ -68,6 +64,7 @@ export default class Main extends Component {
       display: flex;
       max-height: 50vh;
       overflow: hidden;
+      box-sizing: content-box !important;
     `;
 
     return (isLoading ? (
