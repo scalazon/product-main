@@ -4,8 +4,8 @@ import styled, { createGlobalStyle } from 'styled-components';
 import ImageContainer from './components/ImageContainer.jsx';
 import Details from './components/Details.jsx';
 import EmberLt from './resources/AmazonEmber_Lt.ttf';
-import EmberBd from './resources/AmazonEmber_Bd.ttf';
-import EmberRg from './resources/AmazonEmber_Rg.ttf';
+// import EmberBd from './resources/AmazonEmber_Bd.ttf';
+// import EmberRg from './resources/AmazonEmber_Rg.ttf';
 
 export default class Main extends Component {
   constructor(props){
@@ -25,6 +25,14 @@ export default class Main extends Component {
     bc.onmessage = ev => console.log(ev.detail);;
     // console.log(bc);
   }
+      // @font-face {
+      //   font-family: EmberBd;
+      //   src: url(${EmberBd});
+      // }
+      // @font-face {
+      //   font-family: EmberRg;
+      //   src: url(${EmberRg});
+      // }
 
   getData(ASIN){
     return fetch(this.apiURL + this.defaultASIN)
@@ -43,15 +51,7 @@ export default class Main extends Component {
     const GlobalStyles = createGlobalStyle`
       @font-face {
         font-family: EmberLt;
-        src: url(${EmberLt});
-      }
-      @font-face {
-        font-family: EmberBd;
-        src: url(${EmberBd});
-      }
-      @font-face {
-        font-family: EmberRg;
-        src: url(${EmberRg});
+        src: url("http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/fonts/AmazonEmber_Lt.ttf");
       }
       body {
         font-family: EmberLt, Arial, sans-serif;
