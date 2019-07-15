@@ -10,7 +10,7 @@ import EmberRg from './resources/AmazonEmber_Rg.ttf';
 export default class Main extends Component {
   constructor(props){
     super(props)
-    this.apiURL = '/products/';
+    this.apiURL = 'http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/products/';
     this.defaultASIN = 'B01KUGJDB0';
     this.state = {
       data: null,
