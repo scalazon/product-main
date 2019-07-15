@@ -22,7 +22,9 @@ export default class Main extends Component {
   componentDidMount(){
     var bc = new BroadcastChannel('product-change');
     bc.onmessage = ev => this.getData(ev.data);
-    bc.onmessage = ev => console.log(ev.detail);;
+    bc.onmessage = ev => console.log(ev);
+    bc.onmessage = ev => console.log(ev.detail);
+    bc.onmessage = ev => console.log(ev.data);
     // console.log(bc);
   }
       // @font-face {
