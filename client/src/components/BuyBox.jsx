@@ -148,6 +148,7 @@ export default class BuyBox extends Component   {
     const ButtonBox = styled.div`
       border-radius: 4px;
       border: 1px #ddd solid;
+      margin-top: 14px;
     `;
 
     const SameDayShipCopy = styled.div``;
@@ -167,7 +168,7 @@ export default class BuyBox extends Component   {
         <InnerMain>
           <Row>
               <span>
-                Qty: 
+                Qty:&nbsp;
                   <select>
                     {Array.from('12345').map(i=>(<option key={'qty_' + (i)}>{i}</option>))}
                   </select>
@@ -175,8 +176,11 @@ export default class BuyBox extends Component   {
           </Row>
           <Row>
               <span>
-                & FREE Shipping. Details
+                & <strong>FREE Shipping.</strong> <a href="#">Details</a>
               </span>
+          </Row>
+          <Row>
+              <ActionText>Only 4 left in stock - order soon.</ActionText>
           </Row>
           <ButtonBox>
             <PrimeShippingCopy>
