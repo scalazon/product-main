@@ -14,8 +14,9 @@ export default class BuyBox extends Component   {
       border-radius: 4px;
       border: 1px #ddd solid;
       background-color: #fff;
-      width: 270px;
+      width: 206px;
       padding: 14px 18px;
+      float: right;
     `;
 
     const QtyPriceRow = styled.div`
@@ -43,7 +44,7 @@ export default class BuyBox extends Component   {
       border-radius: 4px;
       border: 1px #ddd solid;
       background-color: #fff;
-      width: 230px;
+      width: 169px;
       padding: 14px 18px;
     `;
 

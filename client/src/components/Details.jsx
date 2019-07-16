@@ -6,9 +6,10 @@ import styled from 'styled-components';
 
 export default function Details(props){
   const DetailsDiv = styled.div`
-  padding-left: 30px;
-  padding-left: 30px;
-  box-sizing: content-box !important;
+  min-width: 390px;
+  width: 50vw;
+  max-width: 980px;
+  padding-right: 63px;
   `;
 
    const Price = styled.span``;

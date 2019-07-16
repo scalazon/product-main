@@ -49,11 +49,14 @@ export default class Main extends Component {
       body {
         font-family: EmberLt, Arial, sans-serif;
         font-weight: 400;
+        box-sizing: border-box;
       }
     `;
     const MainDiv = styled.div`
+      width: 100%;
+      padding: 14px 18px;
       display: flex;
-      max-height: 50vh;
+      height: 800px;
       overflow: hidden;
       box-sizing: content-box !important;
     `;

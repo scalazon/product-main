@@ -3,11 +3,10 @@ import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 
 const ImgColDiv = styled.div`
-  box-sizing: content-box !important;
+  box-sizing: border-box;
   display: inline-flex;
   flex-direction: column;
-  width: 50px;
-  padding: 15px 10px;
+  width: 40px;
 `;
  const Thumbnail = styled.img`
   height: 40px;
@@ -15,7 +14,7 @@ const ImgColDiv = styled.div`
   border-width: 1px;
   border-style: solid;
   border-color: #ADB1B8 #A2A6AC #8D9096;
-  margin: 5px;
+  margin: 5px 0;
 `;
 
  const SelectedThumbnail = styled.img`
@@ -23,7 +22,7 @@ const ImgColDiv = styled.div`
   border-radius: 3px;
   border: 1px solid #e77600;
   box-shadow: 0 0 3px 2px rgba(228,121,17,.5);
-  margin: 5px;
+  margin: 5px 0;
 `;
 
 export default function ImageCol(props){
