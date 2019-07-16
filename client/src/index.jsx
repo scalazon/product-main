@@ -3,10 +3,8 @@ import ReactDOM from 'react-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 import ImageContainer from './components/ImageContainer.jsx';
 import Details from './components/Details.jsx';
-import CartInterface from './components/CartInterface.jsx';
+import BuyBox from './components/BuyBox.jsx';
 import EmberLt from './resources/AmazonEmber_Lt.ttf';
-// import EmberBd from './resources/AmazonEmber_Bd.ttf';
-// import EmberRg from './resources/AmazonEmber_Rg.ttf';
 
 export default class Main extends Component {
   constructor(props){
@@ -64,13 +62,12 @@ export default class Main extends Component {
         <div>Loading...</div>
       ) : (
         <MainDiv>
-        <GlobalStyles />
+          <GlobalStyles />
           <ImageContainer
             data={data}
-            onHover={this.handleThumbnailHover}
-          />
+            onHover={this.handleThumbnailHover} />
           <Details data={data} />
-          <CartInterface />
+          <BuyBox />
         </MainDiv>
       )
     )
