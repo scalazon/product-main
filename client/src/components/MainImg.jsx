@@ -7,25 +7,26 @@ export default function MainImg (props) {
     box-sizing: content-box !important;
     width: 30vw;
     min-width: 285px;
+    max-width: 510px;
     height: auto;
     margin: 25px;
   `;
 
   let bigHeight = props.bigHeight;
   let bigWidth = props.bigWidth;
+  // let windowWidth = window.
 
   return (
     <ImgContainer>
       <ReactImageMagnify {...{
         smallImage: {
           isFluidWidth: true,
-           src: `https://hackmazon-images.s3.amazonaws.com/Images/${props.mainImg}`,
+          src: `https://hackmazon-images.s3.amazonaws.com/Images/${props.mainImg}`,
           lensStyle: {
             background: 'hsla(0, 0%, 100%, .3)',
             border: '1px solid #ccc'
           },
           imageStyle: {
-           
           }
         },
         largeImage: {
