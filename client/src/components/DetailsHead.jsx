@@ -9,6 +9,9 @@ export default function DetailsHead(props){
     line-height: 1.3;
   `
   return (
+    <React.Fragment>
     <Title>{props.productTitle}</Title>
+    <img src="http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/images/CustomerResponse.png" />
+    </React.Fragment>
   )
 }

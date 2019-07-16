@@ -4,12 +4,11 @@ import ReactImageMagnify from 'react-image-magnify';
 
 export default function MainImg (props) {
   const ImgContainer = styled.div`
-    box-sizing: content-box !important;
     width: 30vw;
     min-width: 285px;
-    max-width: 510px;
+    max-width: 560px;
     height: auto;
-    margin: 25px;
+    margin: 0 auto;
   `;
 
   let bigHeight = props.bigHeight;

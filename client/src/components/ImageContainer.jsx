@@ -22,7 +22,16 @@ export default class ImageContainer extends Component {
     this.setState({mainImg});
   }
 
+
   render(){
+    const ImgWidthBuffer = styled.div`
+      width: 40vw;
+      min-width: 285px;
+      max-width: 745px;
+      height: auto;
+      margin: 25px;
+    `;
+    
     const ImageDiv = styled.div`
       display: inline-flex;
     `;
@@ -46,10 +55,12 @@ export default class ImageContainer extends Component {
             })
           }}
         />
+        <ImgWidthBuffer>
         <MainImg
           bigWidth={this.state.bigWidth}
           bigHeight={this.state.bigHeight}
           mainImg={this.state.mainImg} />
+        </ImgWidthBuffer>
       </React.Fragment>
     )
   }
