@@ -14,7 +14,7 @@ export default class ButtonBox extends Component   {
       font-size: 17px!important;
       line-height: 1.255!important;
     `;
-    
+
     const ButtonBox = styled.div`
       border-radius: 4px;
       border: 1px #ddd solid;
@@ -23,6 +23,12 @@ export default class ButtonBox extends Component   {
 
     const PrimeShippingCopy = styled.div`
       margin-bottom: 14px;
+      border-radius: 4px;
+      padding: 10px 14px!important;
+      background-color: #d9f2fb;
+      border: #d9f2fb;
+      font-size: 12px;
+      line-height: 19px;
     `;
 
     const Button = styled.div`
@@ -107,7 +113,12 @@ export default class ButtonBox extends Component   {
     return (
       <ButtonBox>
         <PrimeShippingCopy>
-          Buy Prime, Baby!!!
+          <img src="http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/images/Prime_Logo_Transparent_cropped._CB504781143_.png"></img>
+          <p>
+            <b>Enjoy fast, FREE delivery, exclusive deals and Award-Winning movies & TV shows with Prime</b><br />
+            <a>Click here</a> and start saving today with
+            <b>Fast, FREE Delivery</b>
+          </p>
         </PrimeShippingCopy>
         <CartButton>
           <AddToCart>

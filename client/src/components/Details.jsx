@@ -6,11 +6,11 @@ import styled from 'styled-components';
 
 export default function Details(props){
   const DetailsDiv = styled.div`
-  min-width: 370px;
-  width: 40vw;
-  max-width: 980px;
-  padding-right: 63px;
-  line-height: 19px;
+    min-width: 370px;
+    width: 40vw;
+    max-width: 980px;
+    padding-right: 63px;
+    line-height: 19px;
   `;
 
   const ActionText = styled.span`
@@ -21,9 +21,15 @@ export default function Details(props){
   `;
 
   const Price = styled.span``;
-  const HR = styled.hr``;
+
+  const HR = styled.hr`
+    margin: 2px;
+    color: #333;
+  `;
+
   const Bullets = styled.ul`
     font-family: EmberRg, Arial, sans-serif;
+    padding: 0 15px;
   `;
   const Point = styled.li``;
 
@@ -32,7 +38,7 @@ export default function Details(props){
       <DetailsHead productTitle={props.data.productTitle}/>
       <HR />
       <Price>
-        Price: <ActionText>${props.data.price}</ActionText>FREE Shipping on orders over $25 shipped by Amazon or get Fast, Free Shipping with Amazon Prime & FREE Returns
+        Price: <ActionText>${props.data.price} </ActionText><a href="#">FREE Shipping</a> on orders over $25 shipped by Amazon or get Fast, Free Shipping with <a href="#">Amazon Prime</a> & <a href="#">FREE Returns</a>
       </Price>
       <Bullets>
         {props.data.bulletPoints.map((point, idx) => (

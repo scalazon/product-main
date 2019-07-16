@@ -24,7 +24,6 @@ export default class Main extends Component {
   componentDidMount(){
     var bc = new BroadcastChannel('product-change');
     bc.onmessage = (ev) => {
-      console.log('i heard', ev);
       this.getData(ev.data)
     };
   }
@@ -62,6 +61,17 @@ export default class Main extends Component {
       #product-main {
         font-family: EmberLt, Arial, sans-serif;
       }
+
+      a, a:active, a:link, a:visited {
+        text-decoration: none;
+        color: #0066c0;
+      }
+
+      a:hover {
+        color: #c45500;
+        text-decoration: underline;
+      }
+
       *, ::before, ::after {
         box-sizing: border-box;
       }
