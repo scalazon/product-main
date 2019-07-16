@@ -9,16 +9,21 @@ export default class BuyBox extends Component   {
   }
 
   render(){
-    const BorderBox = createGlobalStyle`
+    const BoxStyles = createGlobalStyle`
       box-sizing: border-box;
+      font-size: 13px;
+      font-family: EmberRg, Arial, sans-serif;
     `
     const Box = styled.div`
+      box-sizing: border-box;
       border-radius: 4px;
       border: 1px #ddd solid;
       background-color: #fff;
       width: 270px;
       padding: 14px 18px;
       float: right;
+      font-size: 13px;
+      font-family: EmberRg, Arial, sans-serif;
     `;
 
     const Row = styled.div`
@@ -26,8 +31,11 @@ export default class BuyBox extends Component   {
       justify-content: space-between;
     `;
 
-    // const QtyPriceRow = styled.div`
-    // `;
+    const ActionText = styled.span`
+      color: #B12704!important;
+      font-size: 17px!important;
+      line-height: 1.255!important;
+    `;
 
     const Qty = styled.div`
       width: 40%;
@@ -48,9 +56,9 @@ export default class BuyBox extends Component   {
       box-sizing: border-box;
       display: block;
       width: 100%;
-      border-radius: 4px;
-      border: 1px #ddd solid;
       background-color: #fff;
+      position: relative;
+      top: -8px;
     `;
 
     const PrimeShippingCopy = styled.div`
@@ -137,7 +145,10 @@ export default class BuyBox extends Component   {
       top: -2px;
     `;
 
-    const ButtonBox = styled.div``;
+    const ButtonBox = styled.div`
+      border-radius: 4px;
+      border: 1px #ddd solid;
+    `;
 
     const SameDayShipCopy = styled.div``;
 
@@ -145,22 +156,28 @@ export default class BuyBox extends Component   {
 
     return (
       <Box>
-        <BorderBox />
+        <BoxStyles />
         <Row>
           <span>
             <strong>Buy New</strong>
           </span>
-        </Row>
-        <Row>
-            <p>
-              Qty: 
-                <select>
-                  {Array.from('12345').map(i=>(<option key={'qty_' + (i)}>{i}</option>))}
-                </select>
-            </p>
+          <ActionText>$420.69</ActionText>
         </Row>
         <InStock></InStock>
         <InnerMain>
+          <Row>
+              <span>
+                Qty: 
+                  <select>
+                    {Array.from('12345').map(i=>(<option key={'qty_' + (i)}>{i}</option>))}
+                  </select>
+              </span>
+          </Row>
+          <Row>
+              <span>
+                & FREE Shipping. Details
+              </span>
+          </Row>
           <ButtonBox>
             <PrimeShippingCopy>
               Buy Prime, Baby!!!
