@@ -53,7 +53,9 @@ export default class BuyBox extends Component   {
       background-color: #fff;
     `;
 
-    const PrimeShippingCopy = styled.div``;
+    const PrimeShippingCopy = styled.div`
+      margin-bottom: 14px;
+    `;
 
     const Button = styled.div`
       height: 31px;
@@ -145,7 +147,9 @@ export default class BuyBox extends Component   {
       <Box>
         <BorderBox />
         <Row>
-          <strong>Buy New</strong><br />
+          <span>
+            <strong>Buy New</strong>
+          </span>
         </Row>
         <Row>
             <p>
@@ -158,6 +162,9 @@ export default class BuyBox extends Component   {
         <InStock></InStock>
         <InnerMain>
           <ButtonBox>
+            <PrimeShippingCopy>
+              Buy Prime, Baby!!!
+            </PrimeShippingCopy>
             <CartButton>
               <AddToCart>
                 <SCart></SCart>
