@@ -155,8 +155,6 @@ export default class BuyBox extends Component   {
                 </select>
             </p>
         </Row>
-          <Qty>
-          </Qty>
         <InStock></InStock>
         <InnerMain>
           <ButtonBox>
