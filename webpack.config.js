@@ -17,7 +17,8 @@ module.exports = {
         query: {
           presets: ['@babel/preset-react', '@babel/preset-env'],
           plugins: ["babel-plugin-styled-components"]
-        }
+        },
+        devtool: 'source-map'
       },
       {
         test: /\.less$/,

@@ -14,7 +14,6 @@ export default function MainImg (props) {
 
   let bigHeight = props.bigHeight;
   let bigWidth = props.bigWidth;
-  // let windowWidth = window.
 
   return (
     <ImgContainer>

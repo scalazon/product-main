@@ -68,12 +68,11 @@ export default class Main extends Component {
     `;
     const MainDiv = styled.div`
       width: 100%;
-      max-width: 1912px;
-      padding: 14px 18px;
+      max-width: 1900px;
+      padding: 14px 5px;
       display: flex;
       height: 800px;
       overflow: hidden;
-      box-sizing: content-box !important;
       font-size: 13px;
       line-height: 29px;
     `;

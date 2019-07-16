@@ -20,7 +20,7 @@ export default class BuyBox extends Component   {
       border: 1px #ddd solid;
       background-color: #fff;
       width: 270px;
-      padding: 14px 18px;
+      padding: 14px 5px;
       float: right;
       font-size: 13px;
       font-family: EmberRg, Arial, sans-serif;
