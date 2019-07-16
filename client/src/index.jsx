@@ -5,6 +5,8 @@ import ImageContainer from './components/ImageContainer.jsx';
 import Details from './components/Details.jsx';
 import BuyBox from './components/BuyBox.jsx';
 import EmberLt from './resources/AmazonEmber_Lt.ttf';
+import EmberBd from './resources/AmazonEmber_Bd.ttf';
+import EmberRg from './resources/AmazonEmber_Rg.ttf';
 
 export default class Main extends Component {
   constructor(props){
@@ -46,19 +48,34 @@ export default class Main extends Component {
         font-family: EmberLt;
         src: url("http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/fonts/AmazonEmber_Lt.ttf");
       }
+
+      @font-face {
+        font-family: EmberBd;
+        src: url("http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/fonts/AmazonEmber_Bd.ttf");
+      }
+
+      @font-face {
+        font-family: EmberRg;
+        src: url("http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/fonts/AmazonEmber_Rg.ttf");
+      }
+
       body {
         font-family: EmberLt, Arial, sans-serif;
-        font-weight: 400;
+      }
+      *, ::before, ::after {
         box-sizing: border-box;
       }
     `;
     const MainDiv = styled.div`
       width: 100%;
+      max-width: 1912px;
       padding: 14px 18px;
       display: flex;
       height: 800px;
       overflow: hidden;
       box-sizing: content-box !important;
+      font-size: 13px;
+      line-height: 29px;
     `;
 
     return (isLoading ? (
