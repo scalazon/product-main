@@ -59,7 +59,7 @@ export default class Main extends Component {
         src: url("http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/fonts/AmazonEmber_Rg.ttf");
       }
 
-      body {
+      #product-main {
         font-family: EmberLt, Arial, sans-serif;
       }
       *, ::before, ::after {
