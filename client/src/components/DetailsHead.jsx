@@ -22,7 +22,7 @@ export default function DetailsHead(props){
     <React.Fragment>
     <Title>{props.productTitle}</Title>
     <StarRatings
-      rating={3.9}
+      rating={3.3}
       starRatedColor="#ed9220"
       starEmptyColor={"#fff"}
       starDimension={'18px'}

@@ -48,9 +48,6 @@ export default class BuyBox extends Component   {
       border: 1px #ddd solid;
     `;
 
-    const InStock = styled.div`
-    `;
-
     const InnerMain = styled.div`
       box-sizing: border-box;
       display: block;
@@ -60,9 +57,23 @@ export default class BuyBox extends Component   {
       top: -8px;
     `;
 
-    const SameDayShipCopy = styled.div``;
+    const SameDayShipCopy = styled.div`
+      padding-top: 10px;
+      border: #d9f2fb;
+      font-size: 12px;
+      line-height: 19px;
+      border-bottom: 1px solid #ddd;
+    `;
 
-    const DeliverTo = styled.div``;
+    const CountDown = styled.span`
+      color: #007600!important;
+    `;
+
+    const DeliverTo = styled.div`
+      margin-top: 4px;
+      font-size: 12px!important;
+      line-height: 1.5!important;
+    `;
 
     return (
       <Box>
@@ -73,7 +84,6 @@ export default class BuyBox extends Component   {
           </span>
           <ActionText>$420.69</ActionText>
         </Row>
-        <InStock></InStock>
         <InnerMain>
           <Row>
               <span>
@@ -92,6 +102,13 @@ export default class BuyBox extends Component   {
               <ActionText>Only 4 left in stock - order soon.</ActionText>
           </Row>
           <ButtonBox />
+          <SameDayShipCopy>
+            <b>Want it Friday, July 19?</b> Order within <CountDown>20 hrs 7 mins</CountDown> and choose <b>Two-Day Shipping</b> at checkout. <a href="#">Details</a>
+          </SameDayShipCopy>
+          <DeliverTo>
+            <img src="http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/images/DeliveryStaticPackard-pin.png" />&nbsp;
+            <a href="#">Deliver to Austin</a>
+          </DeliverTo>
         </InnerMain>
       </Box>
     )
