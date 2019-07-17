@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import styled, { createGlobalStyle } from 'styled-components';
+import { MainDiv, GlobalStyles } from './components/atoms/General.jsx';
 import ImageContainer from './components/molecules/ImageContainer.jsx';
 import Details from './components/molecules/Details.jsx';
 import BuyBox from './components/molecules/BuyBox.jsx';
-import EmberLt from './resources/AmazonEmber_Lt.ttf';
-import EmberBd from './resources/AmazonEmber_Bd.ttf';
-import EmberRg from './resources/AmazonEmber_Rg.ttf';
 
 export default class Main extends Component {
   constructor(props){
@@ -42,50 +40,6 @@ export default class Main extends Component {
     const data = this.state.data;
     const mainImg = this.state.mainImg;
     const isLoading = this.state.isLoading;
-    const GlobalStyles = createGlobalStyle`
-      @font-face {
-        font-family: EmberLt;
-        src: url("http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/fonts/AmazonEmber_Lt.ttf");
-      }
-
-      @font-face {
-        font-family: EmberBd;
-        src: url("http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/fonts/AmazonEmber_Bd.ttf");
-      }
-
-      @font-face {
-        font-family: EmberRg;
-        src: url("http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/fonts/AmazonEmber_Rg.ttf");
-      }
-
-      #product-main {
-        font-family: EmberLt, Arial, sans-serif;
-      }
-
-      a, a:active, a:link, a:visited {
-        text-decoration: none;
-        color: #0066c0;
-      }
-
-      a:hover {
-        color: #c45500;
-        text-decoration: underline;
-      }
-
-      *, ::before, ::after {
-        box-sizing: border-box;
-      }
-    `;
-    const MainDiv = styled.div`
-      width: 100%;
-      max-width: 1900px;
-      padding: 14px 5px;
-      display: flex;
-      height: 800px;
-      overflow: hidden;
-      font-size: 13px;
-      line-height: 29px;
-    `;
 
     return (isLoading ? (
         <div>Loading...</div>
