@@ -19,6 +19,8 @@ export default class BuyBox extends Component   {
       border: 1px #ddd solid;
       background-color: #fff;
       width: 270px;
+      height: auto;
+      max-height: 680px;
       padding: 14px 18px;
       float: right;
       font-size: 13px;
@@ -57,12 +59,13 @@ export default class BuyBox extends Component   {
       top: -8px;
     `;
 
-    const SameDayShipCopy = styled.div`
-      padding-top: 10px;
+    const ShippingOfferCopy = styled.div`
+      margin-top: 10px;
       border: #d9f2fb;
-      font-size: 12px;
+      font-size: 13px;
       line-height: 19px;
       border-bottom: 1px solid #ddd;
+      border-top: 1px solid #ddd;
     `;
 
     const CountDown = styled.span`
@@ -70,9 +73,10 @@ export default class BuyBox extends Component   {
     `;
 
     const DeliverTo = styled.div`
-      margin-top: 4px;
+      margin-top: 25px;
       font-size: 12px!important;
       line-height: 1.5!important;
+      padding-left: 6px;
     `;
 
     return (
@@ -94,17 +98,13 @@ export default class BuyBox extends Component   {
               </span>
           </Row>
           <Row>
-              <span>
-                & <strong>FREE Shipping.</strong> <a href="#">Details</a>
-              </span>
-          </Row>
-          <Row>
               <ActionText>Only 4 left in stock - order soon.</ActionText>
           </Row>
+          <ShippingOfferCopy>
+            <p><a href="#">FREE Shipping</a>  on orders over $25 shipped by Amazon or get Fast, Free Shipping with <a href="#">Amazon Prime</a> & <a href="#">FREE Returns</a></p>
+            <p><b>Want it Friday, July 19?</b> Order within <CountDown>20 hrs 7 mins</CountDown> and choose <b>Two-Day Shipping</b> at checkout. <a href="#">Details</a></p>
+          </ShippingOfferCopy>
           <ButtonBox />
-          <SameDayShipCopy>
-            <b>Want it Friday, July 19?</b> Order within <CountDown>20 hrs 7 mins</CountDown> and choose <b>Two-Day Shipping</b> at checkout. <a href="#">Details</a>
-          </SameDayShipCopy>
           <DeliverTo>
             <img src="http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/images/DeliveryStaticPackard-pin.png" />&nbsp;&nbsp;&nbsp;
             <a href="#">Deliver to Austin</a>

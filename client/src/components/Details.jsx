@@ -11,6 +11,7 @@ export default function Details(props){
     max-width: 980px;
     padding-right: 63px;
     line-height: 19px;
+    z-index: 0;
   `;
 
   const ActionText = styled.span`

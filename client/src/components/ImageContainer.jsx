@@ -32,6 +32,7 @@ export default class ImageContainer extends Component {
       margin: 25px;
       position: relative;
       top: -20px;
+      z-index: 1000;
     `;
     
     const ImageDiv = styled.div`
