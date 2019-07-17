@@ -5,7 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "test": "jest --detectOpenHandles --forceExit",
-    "watch": "webpack --watch",
+    "watch": "webpack --watch --mode=development",
     "build": "webpack",
     "start": "node server/index.js"
   },
@@ -30,7 +30,10 @@
     "mongoose": "^5.6.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "styled-components": "^4.3.2"
+    "react-image-magnify": "^2.7.4",
+    "react-star-ratings": "^2.3.0",
+    "styled-components": "^4.3.2",
+    "styled-icons": "^8.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
