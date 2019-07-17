@@ -106,7 +106,7 @@ export default class BuyBox extends Component   {
             <b>Want it Friday, July 19?</b> Order within <CountDown>20 hrs 7 mins</CountDown> and choose <b>Two-Day Shipping</b> at checkout. <a href="#">Details</a>
           </SameDayShipCopy>
           <DeliverTo>
-            <img src="http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/images/DeliveryStaticPackard-pin.png" />&nbsp;
+            <img src="http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/images/DeliveryStaticPackard-pin.png" />&nbsp;&nbsp;&nbsp;
             <a href="#">Deliver to Austin</a>
           </DeliverTo>
         </InnerMain>

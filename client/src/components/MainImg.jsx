@@ -9,6 +9,8 @@ export default function MainImg (props) {
     max-width: 560px;
     height: auto;
     margin: 0 auto;
+    position: relative;
+    top: -20px;
   `;
 
   let bigHeight = props.bigHeight;
@@ -25,6 +27,7 @@ export default function MainImg (props) {
             border: '1px solid #ccc'
           },
           imageStyle: {
+            maxHeight: '680px'
           }
         },
         largeImage: {
