@@ -1,4 +1,6 @@
 import React from 'react';
+import {PlayArrow} from 'styled-icons/material/PlayArrow';
+import {Cart} from 'styled-icons/boxicons-regular/Cart';
 import styled, { css } from 'styled-components';
 
 const ButtonBase = styled.div`

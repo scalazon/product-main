@@ -8,6 +8,7 @@ module.exports = {
     filename: 'product_main_bundle.js',
     path: DIST_DIR
   },
+  devtool: 'source-map',
   module : {
     rules : [
       {
@@ -18,7 +19,6 @@ module.exports = {
           presets: ['@babel/preset-react', '@babel/preset-env'],
           plugins: ["babel-plugin-styled-components"]
         },
-        devtool: 'source-map'
       },
       {
         test: /\.less$/,

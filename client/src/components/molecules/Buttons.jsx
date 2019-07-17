@@ -6,12 +6,12 @@ import {CartButtonBase,
         BuyButtonBase,
         BuyButtonInner,
         NowIcon,
-        ButtonText} from './atoms/ButtonElements.jsx';
+        ButtonText} from '../atoms/ButtonElements.jsx';
 
 export default function PurchaseButton(props){
   return (
-    {(props.type === 'cart'
-      ) ? (
+    <React.Fragment>
+      {props.type === 'cart' ? (
         <CartButtonBase>
           <CartButtonInner>
             <CartIcon />
@@ -25,7 +25,7 @@ export default function PurchaseButton(props){
             <ButtonText>Buy Now</ButtonText>
           </BuyButtonInner>
         </BuyButtonBase>
-      )
-    }
+      )}
+    </React.Fragment>
   )
 }

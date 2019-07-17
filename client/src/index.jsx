@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import styled, { createGlobalStyle } from 'styled-components';
-import ImageContainer from './components/ImageContainer.jsx';
-import Details from './components/Details.jsx';
-import BuyBox from './components/BuyBox.jsx';
+import ImageContainer from './components/molecules/ImageContainer.jsx';
+import Details from './components/molecules/Details.jsx';
+import BuyBox from './components/molecules/BuyBox.jsx';
 import EmberLt from './resources/AmazonEmber_Lt.ttf';
 import EmberBd from './resources/AmazonEmber_Bd.ttf';
 import EmberRg from './resources/AmazonEmber_Rg.ttf';
