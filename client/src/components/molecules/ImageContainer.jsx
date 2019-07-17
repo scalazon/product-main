@@ -22,7 +22,6 @@ export default class ImageContainer extends Component {
     this.setState({mainImg});
   }
 
-
   render(){
     const ImgWidthBuffer = styled.div`
       width: 40vw;

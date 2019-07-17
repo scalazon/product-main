@@ -54,6 +54,7 @@ export const ActionText = styled.span`
   color: #B12704!important;
   font-size: 17px!important;
   line-height: 1.255!important;
+  font-family: EmberRg, Arial, sans-serif;
 `;
 
 export const Row = styled.div`
@@ -65,9 +66,21 @@ export function QuantitySelect(){
   return (
     <span>
       Qty:&nbsp;
-        <select>
-          {Array.from('12345').map(i=>(<option key={'qty_' + (i)}>{i}</option>))}
-        </select>
+      <select>
+        {Array.from('12345').map(i=>(<option key={'qty_' + (i)}>{i}</option>))}
+      </select>
     </span>
   )
 }
+
+export const Title = styled.h2`
+  color: #222;
+  font-size: 21px;
+  line-height: 1.3;
+  margin-bottom: 3px;
+`;
+
+export const HR = styled.hr`
+  margin: 5px 0;
+  color: #333;
+`;

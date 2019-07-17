@@ -10,9 +10,11 @@ export default class Main extends Component {
   constructor(props){
     super(props)
     this.apiURL = 'http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/products/';
+    this.statsAPI = 'http://reviews-dev.us-west-2.elasticbeanstalk.com/summaries/'
     this.defaultASIN = 'B01KUGJDB0';
     this.state = {
       data: null,
+      stats: null,
       isLoading: true
     }
     this.getData = this.getData.bind(this)
@@ -27,17 +29,21 @@ export default class Main extends Component {
   }
 
   getData(ASIN){
-    return fetch(this.apiURL + ASIN)
-      .then(function(response) {
-        return response.json();
-      })
-      .then(data => {
-        this.setState({data, isLoading: false})})
+    return Promise.all([
+      fetch(this.apiURL + ASIN).then(res => res.json()),
+      fetch(this.statsAPI+ ASIN).then(res => res.json())
+      ])
+      .then(promises => {
+        let data = promises[0];
+        let stats = promises[1];
+        console.log(stats);
+        this.setState({data, stats, isLoading: false})})
       .catch(console.error);
   }
 
   render(){
     const data = this.state.data;
+    const stats = this.state.stats;
     const mainImg = this.state.mainImg;
     const isLoading = this.state.isLoading;
 
@@ -49,8 +55,8 @@ export default class Main extends Component {
           <ImageContainer
             data={data}
             onHover={this.handleThumbnailHover} />
-          <Details data={data} />
-          <BuyBox />
+          <Details data={data} stats={stats} />
+          <BuyBox price={data.price} />
         </MainDiv>
       )
     )
