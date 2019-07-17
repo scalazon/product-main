@@ -3,7 +3,7 @@ import styled, { createGlobalStyle, css } from 'styled-components';
 import {PlayArrow} from 'styled-icons/material/PlayArrow';
 import {Cart} from 'styled-icons/boxicons-regular/Cart';
 
-export default class ButtonBox extends Component   {
+export default class ButtonBox extends Component {
   constructor(props){
     super(props);
   }
@@ -73,6 +73,7 @@ export default class ButtonBox extends Component   {
       &:hover {
         background: linear-gradient(to bottom,#eed088,#e8b22c);
       }
+      border-color: #a88734 #9c7e31 #846a29;
     `;
 
     const BuyNow = styled(ButtonInner)`
