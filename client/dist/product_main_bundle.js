@@ -605,6 +605,17 @@ function Details(props) {
   }, "FREE Returns"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_Bullets_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], {
     ASIN: props.data.ASIN,
     bulletPoints: props.data.bulletPoints
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    onKeyPress: function onKeyPress(e) {
+      var code = e.keyCode ? e.keyCode : e.which;
+
+      if (code == 13) {
+        //Enter keycode
+        var bc = new BroadcastChannel('product-change');
+        bc.postMessage(e.target.value); // console.log(e.target.value);
+      }
+    }
   }));
 }
 

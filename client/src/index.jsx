@@ -51,8 +51,7 @@ export default class Main extends Component {
       ) : (
         <MainDiv>
           <GlobalStyles />
-          <ImageContainer
-            data={data} />
+          <ImageContainer data={data} />
           <Details data={data} stats={stats} />
           <BuyBox price={data.price} />
         </MainDiv>
