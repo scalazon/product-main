@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import React from 'react';
 
 const ThumbNail = css`
+  z-index: 100000;
   height: 40px;
   border-radius: 3px;
   border-width: 1px;
@@ -23,15 +24,18 @@ export const SelectedThumbnail = styled.img`
 `;
 
 export const ImgWidthBuffer = styled.div`
-  width: 40vw;
-  min-width: 285px;
-  max-width: 745px;
-  height: auto;
-  margin: 25px;
+  
   position: relative;
   top: -20px;
-  z-index: 1000;
+  
 `;
+//export const ImgWidthBuffer = styled.div`
+//  width: 40vw;
+//  min-width: 285px;
+//  max-width: 745px;
+//  height: auto;
+//  margin: 25px;
+//`;
 
 export const ImgColDiv = styled.div`
   box-sizing: border-box;

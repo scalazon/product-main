@@ -11,7 +11,7 @@ export default class Main extends Component {
     super(props)
     this.apiURL = 'http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/products/';
     this.statsAPI = 'http://reviews-dev.us-west-2.elasticbeanstalk.com/summaries/'
-    this.defaultASIN = 'B01KUGJDB0';
+    this.defaultASIN = 'B07PSQKDDZ';
     this.state = {
       data: null,
       stats: null,

@@ -8,7 +8,7 @@ import {ImgWidthBuffer, ImageDiv} from '../atoms/ImageContainerElements.jsx';
 export default class ImageContainer extends Component {
   constructor(props){
     super(props);
-    this.imagesURL = 'https://hackmazon-images.s3.amazonaws.com/Images/';
+    this.imagesURL = 'https://hackmazon.s3.amazonaws.com/Images/';
     this.state = {
       mainImg: this.props.data.imgURLs[0]
     }

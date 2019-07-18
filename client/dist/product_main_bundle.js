@@ -418,7 +418,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 
 
-var ThumbNail = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(["height:40px;border-radius:3px;border-width:1px;margin:5px 0;position:relative;left:15px;"]);
+var ThumbNail = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(["z-index:100000;height:40px;border-radius:3px;border-width:1px;margin:5px 0;position:relative;left:15px;"]);
 var UnselectedThumbnail = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img.withConfig({
   displayName: "ImageContainerElements__UnselectedThumbnail",
   componentId: "jrnzhx-0"
@@ -430,7 +430,14 @@ var SelectedThumbnail = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"
 var ImgWidthBuffer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "ImageContainerElements__ImgWidthBuffer",
   componentId: "jrnzhx-2"
-})(["width:40vw;min-width:285px;max-width:745px;height:auto;margin:25px;position:relative;top:-20px;z-index:1000;"]);
+})(["position:relative;top:-20px;"]); //export const ImgWidthBuffer = styled.div`
+//  width: 40vw;
+//  min-width: 285px;
+//  max-width: 745px;
+//  height: auto;
+//  margin: 25px;
+//`;
+
 var ImgColDiv = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "ImageContainerElements__ImgColDiv",
   componentId: "jrnzhx-3"
@@ -658,13 +665,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function ImageCol(props) {
+  var thumbnailURL = 'https://hackmazon-thumbs.s3.amazonaws.com/Images/';
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_ImageContainerElements_jsx__WEBPACK_IMPORTED_MODULE_3__["ImgColDiv"], null, props.imgURLs.map(function (imgURL, idx) {
     return imgURL === props.mainImg ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_ImageContainerElements_jsx__WEBPACK_IMPORTED_MODULE_3__["SelectedThumbnail"], {
       key: props.ASIN + 'thumbnail' + idx,
-      src: "https://hackmazon-images.s3.amazonaws.com/Images/".concat(imgURL)
+      src: thumbnailURL + imgURL
     }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_ImageContainerElements_jsx__WEBPACK_IMPORTED_MODULE_3__["UnselectedThumbnail"], {
       key: props.ASIN + 'thumbnail' + idx,
-      src: "https://hackmazon-images.s3.amazonaws.com/Images/".concat(imgURL),
+      src: thumbnailURL + imgURL,
       id: imgURL,
       onMouseOver: props.onHover
     });
@@ -724,7 +732,7 @@ function (_Component) {
     _classCallCheck(this, ImageContainer);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ImageContainer).call(this, props));
-    _this.imagesURL = 'https://hackmazon-images.s3.amazonaws.com/Images/';
+    _this.imagesURL = 'https://hackmazon.s3.amazonaws.com/Images/';
     _this.state = {
       mainImg: _this.props.data.imgURLs[0]
     };
@@ -811,7 +819,7 @@ function MainImg(props) {
   var ImgContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
     displayName: "MainImg__ImgContainer",
     componentId: "sc-5qignb-0"
-  })(["width:30vw;min-width:285px;max-width:560px;height:auto;margin:0 auto;position:relative;top:-20px;"]);
+  })(["width:40vw;min-width:285px;max-width:800px;height:auto;margin:0 auto;position:relative;top:-20px;z-index:1000;"]);
   var bigHeight = props.bigHeight;
   var bigWidth = props.bigWidth;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ImgContainer, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_image_magnify__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -900,7 +908,7 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Main).call(this, props));
     _this.apiURL = 'http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/products/';
     _this.statsAPI = 'http://reviews-dev.us-west-2.elasticbeanstalk.com/summaries/';
-    _this.defaultASIN = 'B01KUGJDB0';
+    _this.defaultASIN = 'B07PSQKDDZ';
     _this.state = {
       data: null,
       stats: null,
