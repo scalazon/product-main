@@ -557,7 +557,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function BuyBox(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_BuyBoxDivs_jsx__WEBPACK_IMPORTED_MODULE_4__["Box"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_General_jsx__WEBPACK_IMPORTED_MODULE_2__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Buy New")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_General_jsx__WEBPACK_IMPORTED_MODULE_2__["ActionText"], null, props.price || '$420.69')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_BuyBoxDivs_jsx__WEBPACK_IMPORTED_MODULE_4__["InnerBox"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_General_jsx__WEBPACK_IMPORTED_MODULE_2__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_General_jsx__WEBPACK_IMPORTED_MODULE_2__["QuantitySelect"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_General_jsx__WEBPACK_IMPORTED_MODULE_2__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_General_jsx__WEBPACK_IMPORTED_MODULE_2__["ActionText"], null, "Only 4 left in stock - order soon.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_BuyBoxCopy_jsx__WEBPACK_IMPORTED_MODULE_3__["ShippingOfferCopy"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ButtonBox_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_DeliverTo_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], null)));
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_BuyBoxDivs_jsx__WEBPACK_IMPORTED_MODULE_4__["Box"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_General_jsx__WEBPACK_IMPORTED_MODULE_2__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Buy New")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_General_jsx__WEBPACK_IMPORTED_MODULE_2__["ActionText"], null, "$", props.price || '420.69')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_BuyBoxDivs_jsx__WEBPACK_IMPORTED_MODULE_4__["InnerBox"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_General_jsx__WEBPACK_IMPORTED_MODULE_2__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_General_jsx__WEBPACK_IMPORTED_MODULE_2__["QuantitySelect"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_General_jsx__WEBPACK_IMPORTED_MODULE_2__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_General_jsx__WEBPACK_IMPORTED_MODULE_2__["ActionText"], null, "Only 4 left in stock - order soon.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_BuyBoxCopy_jsx__WEBPACK_IMPORTED_MODULE_3__["ShippingOfferCopy"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ButtonBox_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_DeliverTo_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], null)));
 }
 
 /***/ }),
@@ -605,17 +605,6 @@ function Details(props) {
   }, "FREE Returns"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_Bullets_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], {
     ASIN: props.data.ASIN,
     bulletPoints: props.data.bulletPoints
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "text",
-    onKeyPress: function onKeyPress(e) {
-      var code = e.keyCode ? e.keyCode : e.which;
-
-      if (code == 13) {
-        //Enter keycode
-        var bc = new BroadcastChannel('product-change');
-        bc.postMessage(e.target.value); // console.log(e.target.value);
-      }
-    }
   }));
 }
 
@@ -735,20 +724,24 @@ function (_Component) {
     _classCallCheck(this, ImageContainer);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ImageContainer).call(this, props));
-    console.log('from constructor', props.data);
-    _this.imagesURL = 'https://hackmazon-images.s3.amazonaws.com/Images/'; // this.data = props.data;
-
-    _this.imgURLs = props.data.imgURLs;
-    _this.ASIN = props.data.ASIN;
+    _this.imagesURL = 'https://hackmazon-images.s3.amazonaws.com/Images/';
     _this.state = {
-      mainImg: _this.imgURLs[0],
-      data: props.data
+      mainImg: _this.props.data.imgURLs[0]
     };
     _this.handleThumbnailHover = _this.handleThumbnailHover.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(ImageContainer, [{
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      if (this.props.data.imgURLs[0] !== prevProps.data.imgURLs[0]) {
+        this.setState({
+          mainImg: this.props.data.imgURLs[0]
+        });
+      }
+    }
+  }, {
     key: "handleThumbnailHover",
     value: function handleThumbnailHover(e) {
       var mainImg = e.target.id;
@@ -761,10 +754,9 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      console.log('from render', this.state.data);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ImageCol_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        ASIN: this.ASIN,
-        imgURLs: this.imgURLs,
+        ASIN: this.props.data.ASIN,
+        imgURLs: this.props.data.imgURLs,
         mainImg: this.state.mainImg,
         onHover: this.handleThumbnailHover
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {

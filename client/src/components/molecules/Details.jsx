@@ -14,7 +14,7 @@ export default function Details(props){
     line-height: 19px;
     z-index: 0;
   `;
-  
+
   return (
     <DetailsDiv>
       <DetailsHead
@@ -29,14 +29,6 @@ export default function Details(props){
         ASIN={props.data.ASIN}
         bulletPoints={props.data.bulletPoints}
       />
-      <input type="text" onKeyPress={e=>{
-        var code = (e.keyCode ? e.keyCode : e.which);
-        if(code == 13) { //Enter keycode
-          var bc = new BroadcastChannel('product-change');
-           bc.postMessage(e.target.value);
-          // console.log(e.target.value);
-        }
-      }} />
     </DetailsDiv>
   )
 }

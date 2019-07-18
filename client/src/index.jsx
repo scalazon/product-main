@@ -45,7 +45,6 @@ export default class Main extends Component {
     const stats = this.state.stats;
     const mainImg = this.state.mainImg;
     const isLoading = this.state.isLoading;
-
     return (isLoading ? (
         <div>Loading...</div>
       ) : (

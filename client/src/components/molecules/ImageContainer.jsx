@@ -8,17 +8,17 @@ import {ImgWidthBuffer, ImageDiv} from '../atoms/ImageContainerElements.jsx';
 export default class ImageContainer extends Component {
   constructor(props){
     super(props);
-    console.log('from constructor', props.data);
     this.imagesURL = 'https://hackmazon-images.s3.amazonaws.com/Images/';
-    // this.data = props.data;
-    this.imgURLs = props.data.imgURLs;
-
-    this.ASIN = props.data.ASIN;
     this.state = {
-      mainImg: this.imgURLs[0],
-      data: props.data
+      mainImg: this.props.data.imgURLs[0]
     }
     this.handleThumbnailHover = this.handleThumbnailHover.bind(this);
+  }
+
+  componentDidUpdate(prevProps){
+    if (this.props.data.imgURLs[0] !== prevProps.data.imgURLs[0]){
+      this.setState({mainImg: this.props.data.imgURLs[0]});
+    }
   }
 
   handleThumbnailHover(e){
@@ -27,12 +27,11 @@ export default class ImageContainer extends Component {
   }
 
   render(){
-    console.log('from render', this.state.data);
     return (
       <React.Fragment>
         <ImageCol
-          ASIN={this.ASIN}
-          imgURLs={this.imgURLs}
+          ASIN={this.props.data.ASIN}
+          imgURLs={this.props.data.imgURLs}
           mainImg={this.state.mainImg}
           onHover={this.handleThumbnailHover}
         />

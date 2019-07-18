@@ -13,7 +13,7 @@ export default function BuyBox (props){
         <span>
           <strong>Buy New</strong>
         </span>
-        <ActionText>{props.price || '$420.69'}</ActionText>
+        <ActionText>${props.price || '420.69'}</ActionText>
       </Row>
       <InnerBox>
         <Row>
