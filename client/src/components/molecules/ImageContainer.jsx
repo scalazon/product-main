@@ -8,6 +8,7 @@ import {ImgWidthBuffer, ImageDiv} from '../atoms/ImageContainerElements.jsx';
 export default class ImageContainer extends Component {
   constructor(props){
     super(props);
+    console.log('from constructor', props.data);
     this.imagesURL = 'https://hackmazon-images.s3.amazonaws.com/Images/';
     // this.data = props.data;
     this.imgURLs = props.data.imgURLs;
@@ -26,7 +27,7 @@ export default class ImageContainer extends Component {
   }
 
   render(){
-    console.log(this.data);
+    console.log('from render', this.state.data);
     return (
       <React.Fragment>
         <ImageCol

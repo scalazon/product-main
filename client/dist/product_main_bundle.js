@@ -724,6 +724,7 @@ function (_Component) {
     _classCallCheck(this, ImageContainer);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ImageContainer).call(this, props));
+    console.log('from constructor', props.data);
     _this.imagesURL = 'https://hackmazon-images.s3.amazonaws.com/Images/'; // this.data = props.data;
 
     _this.imgURLs = props.data.imgURLs;
@@ -749,7 +750,7 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      console.log(this.data);
+      console.log('from render', this.state.data);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ImageCol_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
         ASIN: this.ASIN,
         imgURLs: this.imgURLs,
