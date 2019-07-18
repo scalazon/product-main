@@ -724,12 +724,13 @@ function (_Component) {
     _classCallCheck(this, ImageContainer);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ImageContainer).call(this, props));
-    _this.imagesURL = 'https://hackmazon-images.s3.amazonaws.com/Images/';
-    _this.data = props.data;
+    _this.imagesURL = 'https://hackmazon-images.s3.amazonaws.com/Images/'; // this.data = props.data;
+
     _this.imgURLs = props.data.imgURLs;
     _this.ASIN = props.data.ASIN;
     _this.state = {
-      mainImg: _this.imgURLs[0]
+      mainImg: _this.imgURLs[0],
+      data: props.data
     };
     _this.handleThumbnailHover = _this.handleThumbnailHover.bind(_assertThisInitialized(_this));
     return _this;

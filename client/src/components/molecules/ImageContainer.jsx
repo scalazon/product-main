@@ -9,12 +9,13 @@ export default class ImageContainer extends Component {
   constructor(props){
     super(props);
     this.imagesURL = 'https://hackmazon-images.s3.amazonaws.com/Images/';
-    this.data = props.data;
+    // this.data = props.data;
     this.imgURLs = props.data.imgURLs;
 
     this.ASIN = props.data.ASIN;
     this.state = {
       mainImg: this.imgURLs[0],
+      data: props.data
     }
     this.handleThumbnailHover = this.handleThumbnailHover.bind(this);
   }
