@@ -24,18 +24,9 @@ export const SelectedThumbnail = styled.img`
 `;
 
 export const ImgWidthBuffer = styled.div`
-  
   position: relative;
   top: -20px;
-  
 `;
-//export const ImgWidthBuffer = styled.div`
-//  width: 40vw;
-//  min-width: 285px;
-//  max-width: 745px;
-//  height: auto;
-//  margin: 25px;
-//`;
 
 export const ImgColDiv = styled.div`
   box-sizing: border-box;

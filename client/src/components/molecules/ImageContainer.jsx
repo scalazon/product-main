@@ -54,8 +54,8 @@ export default class ImageContainer extends Component {
             mainImg={this.state.mainImg} />
           ) : (
           <MainImg
-            bigWidth={1000}
-            bigHeight={1000}
+            bigWidth={600}
+            bigHeight={600}
             mainImg={this.state.mainImg} />
           )
 

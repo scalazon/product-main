@@ -430,14 +430,7 @@ var SelectedThumbnail = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"
 var ImgWidthBuffer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "ImageContainerElements__ImgWidthBuffer",
   componentId: "jrnzhx-2"
-})(["position:relative;top:-20px;"]); //export const ImgWidthBuffer = styled.div`
-//  width: 40vw;
-//  min-width: 285px;
-//  max-width: 745px;
-//  height: auto;
-//  margin: 25px;
-//`;
-
+})(["position:relative;top:-20px;"]);
 var ImgColDiv = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "ImageContainerElements__ImgColDiv",
   componentId: "jrnzhx-3"
@@ -784,8 +777,8 @@ function (_Component) {
         bigHeight: this.state.bigHeight,
         mainImg: this.state.mainImg
       }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MainImg_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        bigWidth: 1000,
-        bigHeight: 1000,
+        bigWidth: 600,
+        bigHeight: 600,
         mainImg: this.state.mainImg
       })));
     }
@@ -836,7 +829,7 @@ function MainImg(props) {
       }
     },
     largeImage: {
-      src: "https://hackmazon-images.s3.amazonaws.com/Images/".concat(props.mainImg),
+      src: imagesURL + props.mainImg,
       width: bigWidth,
       height: bigHeight
     },

@@ -32,7 +32,7 @@ export default function MainImg (props) {
           }
         },
         largeImage: {
-          src: `https://hackmazon-images.s3.amazonaws.com/Images/${props.mainImg}`,
+          src: (imagesURL + props.mainImg),
           width: bigWidth,
           height: bigHeight
         },
