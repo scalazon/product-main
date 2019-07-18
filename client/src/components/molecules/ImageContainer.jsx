@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import ImageCol from './ImageCol.jsx';
 import MainImg from './MainImg.jsx';
+import {ImgWidthBuffer, ImageDiv} from '../atoms/ImageContainerElements.jsx';
 
 
 export default class ImageContainer extends Component {
@@ -23,21 +24,6 @@ export default class ImageContainer extends Component {
   }
 
   render(){
-    const ImgWidthBuffer = styled.div`
-      width: 40vw;
-      min-width: 285px;
-      max-width: 745px;
-      height: auto;
-      margin: 25px;
-      position: relative;
-      top: -20px;
-      z-index: 1000;
-    `;
-    
-    const ImageDiv = styled.div`
-      display: inline-flex;
-    `;
-
     return (
       <React.Fragment>
         <ImageCol

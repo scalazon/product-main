@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import styled, { css } from 'styled-components';
 import PurchaseButton from './Buttons.jsx';
-import { PrimeShippingCopy } from '../atoms/Copy.jsx';
+import { PrimeShippingCopy } from '../atoms/BuyBoxCopy.jsx';
 
 export default function ButtonBox (){
   const ButtonBox = styled.div`

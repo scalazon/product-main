@@ -21,3 +21,25 @@ export const SelectedThumbnail = styled.img`
   border: 1px solid #e77600;
   box-shadow: 0 0 3px 2px rgba(228,121,17,.5);
 `;
+
+export const ImgWidthBuffer = styled.div`
+  width: 40vw;
+  min-width: 285px;
+  max-width: 745px;
+  height: auto;
+  margin: 25px;
+  position: relative;
+  top: -20px;
+  z-index: 1000;
+`;
+
+export const ImgColDiv = styled.div`
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-direction: column;
+  width: 40px;
+`;
+
+export const ImageDiv = styled.div`
+  display: inline-flex;
+`;

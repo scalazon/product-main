@@ -3,10 +3,10 @@ import styled, {css} from 'styled-components';
 import {CartButtonBase, 
         CartButtonInner,
         CartIcon,
+        ButtonText,
         BuyButtonBase,
         BuyButtonInner,
-        NowIcon,
-        ButtonText} from '../atoms/ButtonElements.jsx';
+        NowIcon} from '../atoms/ButtonElements.jsx';
 
 export default function PurchaseButton(props){
   return (

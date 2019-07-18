@@ -39,6 +39,18 @@ export const GlobalStyles = createGlobalStyle`
   }
 `;
 
+export const ActionText = styled.span`
+  color: #B12704!important;
+  font-size: 17px!important;
+  line-height: 1.255!important;
+  font-family: EmberRg, Arial, sans-serif;
+`;
+
+export const HR = styled.hr`
+  margin: 5px 0;
+  color: #333;
+`;
+
 export const MainDiv = styled.div`
   width: 100%;
   max-width: 1900px;
@@ -51,17 +63,6 @@ export const MainDiv = styled.div`
   margin: 12px 8px;
 `;
 
-export const ActionText = styled.span`
-  color: #B12704!important;
-  font-size: 17px!important;
-  line-height: 1.255!important;
-  font-family: EmberRg, Arial, sans-serif;
-`;
-
-export const Row = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
 
 export function QuantitySelect(){
   return (
@@ -74,14 +75,14 @@ export function QuantitySelect(){
   )
 }
 
+export const Row = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
 export const Title = styled.h2`
   color: #222;
   font-size: 21px;
   line-height: 1.3;
   margin-bottom: 3px;
-`;
-
-export const HR = styled.hr`
-  margin: 5px 0;
-  color: #333;
 `;
