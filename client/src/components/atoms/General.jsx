@@ -48,6 +48,7 @@ export const MainDiv = styled.div`
   overflow: hidden;
   font-size: 13px;
   line-height: 29px;
+  margin: 12px 8px;
 `;
 
 export const ActionText = styled.span`
