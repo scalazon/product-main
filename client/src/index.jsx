@@ -36,7 +36,6 @@ export default class Main extends Component {
       .then(promises => {
         let data = promises[0];
         let stats = promises[1];
-        console.log(stats);
         this.setState({data, stats, isLoading: false})})
       .catch(console.error);
   }
@@ -53,8 +52,7 @@ export default class Main extends Component {
         <MainDiv>
           <GlobalStyles />
           <ImageContainer
-            data={data}
-            onHover={this.handleThumbnailHover} />
+            data={data} />
           <Details data={data} stats={stats} />
           <BuyBox price={data.price} />
         </MainDiv>

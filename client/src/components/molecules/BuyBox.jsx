@@ -2,12 +2,11 @@ import React, {Component} from 'react';
 import styled, { createGlobalStyle, css } from 'styled-components';
 import { ActionText, Row, QuantitySelect } from '../atoms/General.jsx';
 import { ShippingOfferCopy } from '../atoms/BuyBoxCopy.jsx';
-import { MainBox, InnerBox } from '../atoms/BuyBoxDivs.jsx';
+import { Box, MainBox, InnerBox } from '../atoms/BuyBoxDivs.jsx';
 import DeliverTo from '../atoms/DeliverTo.jsx';
 import ButtonBox from './ButtonBox.jsx';
 
 export default function BuyBox (props){
-
   return (
     <Box>
       <Row>
@@ -16,7 +15,7 @@ export default function BuyBox (props){
         </span>
         <ActionText>{props.price || '$420.69'}</ActionText>
       </Row>
-      <InnerMain>
+      <InnerBox>
         <Row>
           <QuantitySelect />
         </Row>
@@ -26,7 +25,7 @@ export default function BuyBox (props){
         <ShippingOfferCopy />
         <ButtonBox />
         <DeliverTo />
-      </InnerMain>
+      </InnerBox>
     </Box>
   )
 }
