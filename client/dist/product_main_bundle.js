@@ -769,7 +769,7 @@ function (_Component) {
         onHover: this.handleThumbnailHover
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         id: "HiddenImg",
-        src: "https://hackmazon-images.s3.amazonaws.com/Images/".concat(this.state.mainImg),
+        src: this.imagesURL + this.state.mainImg,
         style: {
           display: 'none'
         },
@@ -820,12 +820,13 @@ function MainImg(props) {
     displayName: "MainImg__ImgContainer",
     componentId: "sc-5qignb-0"
   })(["width:40vw;min-width:285px;max-width:800px;height:auto;margin:0 auto;position:relative;top:-20px;z-index:1000;"]);
+  var imagesURL = 'https://hackmazon.s3.amazonaws.com/Images/';
   var bigHeight = props.bigHeight;
   var bigWidth = props.bigWidth;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ImgContainer, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_image_magnify__WEBPACK_IMPORTED_MODULE_2__["default"], {
     smallImage: {
       isFluidWidth: true,
-      src: "https://hackmazon-images.s3.amazonaws.com/Images/".concat(props.mainImg),
+      src: imagesURL + props.mainImg,
       lensStyle: {
         background: 'hsla(0, 0%, 100%, .3)',
         border: '1px solid #ccc'

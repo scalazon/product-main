@@ -37,7 +37,7 @@ export default class ImageContainer extends Component {
         />
         <img
           id="HiddenImg"
-          src={`https://hackmazon-images.s3.amazonaws.com/Images/${this.state.mainImg}`}
+          src={this.imagesURL + this.state.mainImg}
           style={{display: 'none'}}
           onLoad={(e) => {
             this.setState({

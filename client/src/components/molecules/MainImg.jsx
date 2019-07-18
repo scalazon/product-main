@@ -13,7 +13,7 @@ export default function MainImg (props) {
     top: -20px;
     z-index: 1000;
   `;
-
+  const imagesURL = 'https://hackmazon.s3.amazonaws.com/Images/';
   let bigHeight = props.bigHeight;
   let bigWidth = props.bigWidth;
 
@@ -22,7 +22,7 @@ export default function MainImg (props) {
       <ReactImageMagnify {...{
         smallImage: {
           isFluidWidth: true,
-          src: `https://hackmazon-images.s3.amazonaws.com/Images/${props.mainImg}`,
+          src: (imagesURL + props.mainImg),
           lensStyle: {
             background: 'hsla(0, 0%, 100%, .3)',
             border: '1px solid #ccc'
