@@ -68,7 +68,7 @@ export function QuantitySelect(){
   return (
     <span>
       Qty:&nbsp;
-      <select>
+      <select id="quantitySelect">
         {Array.from('12345').map(i=>(<option key={'qty_' + (i)}>{i}</option>))}
       </select>
     </span>
