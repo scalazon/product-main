@@ -12,12 +12,14 @@ export default function ImageCol(props){
           <SelectedThumbnail
             key={props.ASIN + 'thumbnail' + idx}
             src={thumbnailURL + imgURL}
+            idx={idx}
           />
         ):(
           <UnselectedThumbnail
             key={props.ASIN + 'thumbnail' + idx}
             src={thumbnailURL + imgURL}
             id={imgURL}
+            idx={idx}
             onMouseOver={props.onHover}
           />
         )

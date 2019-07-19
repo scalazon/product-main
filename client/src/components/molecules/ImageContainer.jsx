@@ -4,13 +4,13 @@ import ImageCol from './ImageCol.jsx';
 import MainImg from './MainImg.jsx';
 import {ImgWidthBuffer, ImageDiv} from '../atoms/ImageContainerElements.jsx';
 
-
 export default class ImageContainer extends Component {
   constructor(props){
     super(props);
     this.imagesURL = 'https://hackmazon.s3.amazonaws.com/Images/';
     this.state = {
-      mainImg: this.props.data.imgURLs[0]
+      mainImg: this.props.data.imgURLs[0],
+      mainImgDimensions: this.props.data.imgDimensions[0]
     }
     this.handleThumbnailHover = this.handleThumbnailHover.bind(this);
   }
@@ -23,7 +23,10 @@ export default class ImageContainer extends Component {
 
   handleThumbnailHover(e){
     const mainImg = e.target.id;
-    this.setState({mainImg});
+    const imgIdx = this.props.data.imgURLs.indexOf(mainImg);
+    const mainImgDimensions = this.props.data.imgDimensions[imgIdx];
+    console.log(mainImgDimensions);
+    this.setState({mainImg, mainImgDimensions});
   }
 
   render(){
@@ -49,13 +52,13 @@ export default class ImageContainer extends Component {
         <ImgWidthBuffer>
         {this.state.bigWidth ? (
           <MainImg
-            bigWidth={this.state.bigWidth}
-            bigHeight={this.state.bigHeight}
+            bigWidth={this.state.mainImgDimensions.width}
+            bigHeight={this.state.mainImgDimensions.height}
             mainImg={this.state.mainImg} />
           ) : (
           <MainImg
-            bigWidth={600}
-            bigHeight={600}
+            bigWidth={this.state.mainImgDimensions.width}
+            bigHeight={this.state.mainImgDimensions.height}
             mainImg={this.state.mainImg} />
           )
 
