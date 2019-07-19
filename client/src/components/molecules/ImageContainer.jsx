@@ -25,7 +25,6 @@ export default class ImageContainer extends Component {
     const mainImg = e.target.id;
     const imgIdx = this.props.data.imgURLs.indexOf(mainImg);
     const mainImgDimensions = this.props.data.imgDimensions[imgIdx];
-    console.log(mainImgDimensions);
     this.setState({mainImg, mainImgDimensions});
   }
 
@@ -38,31 +37,11 @@ export default class ImageContainer extends Component {
           mainImg={this.state.mainImg}
           onHover={this.handleThumbnailHover}
         />
-        <img
-          id="HiddenImg"
-          src={this.imagesURL + this.state.mainImg}
-          style={{display: 'none'}}
-          onLoad={(e) => {
-            this.setState({
-              bigHeight: e.target.height,
-              bigWidth: e.target.width
-            })
-          }}
-        />
         <ImgWidthBuffer>
-        {this.state.bigWidth ? (
-          <MainImg
-            bigWidth={this.state.mainImgDimensions.width}
-            bigHeight={this.state.mainImgDimensions.height}
-            mainImg={this.state.mainImg} />
-          ) : (
-          <MainImg
-            bigWidth={this.state.mainImgDimensions.width}
-            bigHeight={this.state.mainImgDimensions.height}
-            mainImg={this.state.mainImg} />
-          )
-
-        }
+        <MainImg
+          bigWidth={this.state.mainImgDimensions.width}
+          bigHeight={this.state.mainImgDimensions.height}
+          mainImg={this.state.mainImg} />
         </ImgWidthBuffer>
       </React.Fragment>
     )
