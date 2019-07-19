@@ -78,4 +78,5 @@ export const NowIcon = styled(PlayArrow)`
 export const ButtonText = styled.span`
   position: relative;
   top: -2px;
+  user-select: none;
 `;

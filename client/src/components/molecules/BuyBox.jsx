@@ -23,7 +23,7 @@ export default function BuyBox (props){
           <ActionText>Only 4 left in stock - order soon.</ActionText>
         </Row>
         <ShippingOfferCopy />
-        <ButtonBox />
+        <ButtonBox clickHandler={props.clickHandler} />
         <DeliverTo />
       </InnerBox>
     </Box>

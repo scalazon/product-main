@@ -13,7 +13,7 @@ export default function PurchaseButton(props){
     <React.Fragment>
       {props.type === 'cart' ? (
         <CartButtonBase>
-          <CartButtonInner>
+          <CartButtonInner onClick={props.clickHandler}>
             <CartIcon />
             <ButtonText>Add to Cart</ButtonText>
           </CartButtonInner>

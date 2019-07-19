@@ -6,7 +6,7 @@ import ImageContainer from './components/molecules/ImageContainer.jsx';
 import Details from './components/molecules/Details.jsx';
 import BuyBox from './components/molecules/BuyBox.jsx';
 
-export default class Main extends Component {
+class Main extends Component {
   constructor(props){
     super(props)
     this.apiURL = 'http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/products/';
@@ -17,7 +17,8 @@ export default class Main extends Component {
       stats: null,
       isLoading: true
     }
-    this.getData = this.getData.bind(this)
+    this.getData = this.getData.bind(this);
+    this.addToCart = this.addToCart.bind(this);
     this.getData(this.defaultASIN);
   }
 
@@ -26,6 +27,10 @@ export default class Main extends Component {
     bc.onmessage = (ev) => {
       this.getData(ev.data)
     };
+    // var bc2 = new BroadcastChannel('add-to');
+    // bc2.onmessage = (ev) => {
+    //   this.getData(ev.data)
+    // };
   }
 
   getData(ASIN){
@@ -40,6 +45,13 @@ export default class Main extends Component {
       .catch(console.error);
   }
 
+  addToCart(e){
+    const cc = new BroadcastChannel('cart');
+    const quantity = document.getElementById('quantitySelect').value;
+    const asin = this.state.data.asin;
+    cc.postMessage({asin, quantity});
+  }
+
   render(){
     const data = this.state.data;
     const stats = this.state.stats;
@@ -52,7 +64,9 @@ export default class Main extends Component {
           <GlobalStyles />
           <ImageContainer data={data} />
           <Details data={data} stats={stats} />
-          <BuyBox price={data.price} />
+          <BuyBox
+            price={data.price}
+            clickHandler={this.addToCart} />
         </MainDiv>
       )
     )
@@ -60,3 +74,7 @@ export default class Main extends Component {
 }
 
 ReactDOM.render(<Main />, document.getElementById('product-main'));
+
+export default function deployPM(){
+  ReactDOM.render(<Main />, document.getElementById('product-main'));
+}
