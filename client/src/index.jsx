@@ -27,10 +27,6 @@ class Main extends Component {
     bc.onmessage = (ev) => {
       this.getData(ev.data)
     };
-    // var bc2 = new BroadcastChannel('add-to');
-    // bc2.onmessage = (ev) => {
-    //   this.getData(ev.data)
-    // };
   }
 
   getData(ASIN){

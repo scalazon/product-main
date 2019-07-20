@@ -8,7 +8,7 @@ export default function MainImg (props) {
     min-width: 285px;
     max-width: 800px;
     height: auto;
-    margin: 0 auto;
+    margin: 8px 8px;
     position: relative;
     top: -20px;
     z-index: 1000;

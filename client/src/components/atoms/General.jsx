@@ -11,11 +11,6 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   @font-face {
-    font-family: EmberBd;
-    src: url("http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/fonts/AmazonEmber_Bd.ttf");
-  }
-
-  @font-face {
     font-family: EmberRg;
     src: url("http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/fonts/AmazonEmber_Rg.ttf");
   }
@@ -32,10 +27,6 @@ export const GlobalStyles = createGlobalStyle`
   #product-main a:hover {
     color: #c45500;
     text-decoration: underline;
-  }
-
-  #product-main {
-    box-sizing: content-box !important;
   }
 
   *, ::before, ::after {

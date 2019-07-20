@@ -36,7 +36,6 @@ module.exports = {
       }
     ]
   },
-   plugins: [new CompressionPlugin()],
   optimization: {
     minimizer: [
       new UglifyJsPlugin({
