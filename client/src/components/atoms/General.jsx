@@ -34,6 +34,10 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: underline;
   }
 
+  #product-main {
+    box-sizing: content-box !important;
+  }
+
   *, ::before, ::after {
     box-sizing: border-box;
   }

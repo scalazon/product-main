@@ -3,13 +3,13 @@ import styled, {css} from 'styled-components';
 
 export function PrimeShippingCopy(){
   const ShippingCopyDiv = styled.div`
-    margin-bottom: 14px;
-    border-radius: 4px;
-    padding: 10px 14px!important;
-    background-color: #d9f2fb;
-    border: #d9f2fb;
-    font-size: 12px;
-    line-height: 19px;
+    margin-bottom: 14px !important;
+    border-radius: 4px !important;
+    padding: 10px 14px !important;
+    background-color: #d9f2fb !important;
+    border: #d9f2fb !important;
+    font-size: 12px !important;
+    line-height: 19px !important;
   `;
 
   return (
@@ -26,12 +26,12 @@ export function PrimeShippingCopy(){
 
 export function ShippingOfferCopy(){
   const ShippingCopyDiv = styled.div`
-    margin-top: 10px;
-    border: #d9f2fb;
-    font-size: 13px;
-    line-height: 19px;
-    border-bottom: 1px solid #ddd;
-    border-top: 1px solid #ddd;
+    margin-top: 10px !important;
+    border: #d9f2fb !important;
+    font-size: 13px !important;
+    line-height: 19px !important;
+    border-bottom: 1px solid #ddd !important;
+    border-top: 1px solid #ddd !important;
   `;
 
   const CountDown = styled.span`

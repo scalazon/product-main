@@ -4,8 +4,8 @@ import styled from 'styled-components';
 export default function DeliverTo(){
   const DeliverToDiv = styled.div`
     margin-top: 25px;
-    font-size: 12px!important;
-    line-height: 1.5!important;
+    font-size: 12px;
+    line-height: 1.5;
     padding-left: 6px;
   `;
 
