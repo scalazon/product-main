@@ -21,3 +21,17 @@ export const InnerBox = styled.div`
   position: relative;
   top: -8px;
 `;
+
+export const Box = styled.div`
+  border-radius: 4px;
+  border: 1px #ddd solid;
+  background-color: #fff;
+  width: 270px;
+  height: auto;
+  max-height: 680px;
+  padding: 14px 18px;
+  float: right;
+  font-size: 13px;
+  font-family: EmberRg, Arial, sans-serif;
+  margin: 0 20px;
+`;

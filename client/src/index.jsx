@@ -6,18 +6,19 @@ import ImageContainer from './components/molecules/ImageContainer.jsx';
 import Details from './components/molecules/Details.jsx';
 import BuyBox from './components/molecules/BuyBox.jsx';
 
-export default class Main extends Component {
+class Main extends Component {
   constructor(props){
     super(props)
     this.apiURL = 'http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/products/';
     this.statsAPI = 'http://reviews-dev.us-west-2.elasticbeanstalk.com/summaries/'
-    this.defaultASIN = 'B01KUGJDB0';
+    this.defaultASIN = 'B07PSQKDDZ';
     this.state = {
       data: null,
       stats: null,
       isLoading: true
     }
-    this.getData = this.getData.bind(this)
+    this.getData = this.getData.bind(this);
+    this.addToCart = this.addToCart.bind(this);
     this.getData(this.defaultASIN);
   }
 
@@ -26,6 +27,10 @@ export default class Main extends Component {
     bc.onmessage = (ev) => {
       this.getData(ev.data)
     };
+    // var bc2 = new BroadcastChannel('add-to');
+    // bc2.onmessage = (ev) => {
+    //   this.getData(ev.data)
+    // };
   }
 
   getData(ASIN){
@@ -36,9 +41,15 @@ export default class Main extends Component {
       .then(promises => {
         let data = promises[0];
         let stats = promises[1];
-        console.log(stats);
         this.setState({data, stats, isLoading: false})})
       .catch(console.error);
+  }
+
+  addToCart(e){
+    const cc = new BroadcastChannel('cart');
+    const quantity = document.getElementById('quantitySelect').value;
+    const asin = this.state.data.asin;
+    cc.postMessage({asin, quantity});
   }
 
   render(){
@@ -46,17 +57,16 @@ export default class Main extends Component {
     const stats = this.state.stats;
     const mainImg = this.state.mainImg;
     const isLoading = this.state.isLoading;
-
     return (isLoading ? (
         <div>Loading...</div>
       ) : (
         <MainDiv>
           <GlobalStyles />
-          <ImageContainer
-            data={data}
-            onHover={this.handleThumbnailHover} />
+          <ImageContainer data={data} />
           <Details data={data} stats={stats} />
-          <BuyBox price={data.price} />
+          <BuyBox
+            price={data.price}
+            clickHandler={this.addToCart} />
         </MainDiv>
       )
     )
@@ -64,3 +74,7 @@ export default class Main extends Component {
 }
 
 ReactDOM.render(<Main />, document.getElementById('product-main'));
+
+export default function deployPM(){
+  ReactDOM.render(<Main />, document.getElementById('product-main'));
+}

@@ -2,65 +2,45 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import ImageCol from './ImageCol.jsx';
 import MainImg from './MainImg.jsx';
-
+import {ImgWidthBuffer, ImageDiv} from '../atoms/ImageContainerElements.jsx';
 
 export default class ImageContainer extends Component {
   constructor(props){
     super(props);
-    this.imagesURL = 'https://hackmazon-images.s3.amazonaws.com/Images/';
-    this.imgURLs = props.data.imgURLs;
-    
-    this.ASIN = props.data.ASIN;
+    this.imagesURL = 'https://hackmazon.s3.amazonaws.com/Images/';
     this.state = {
-      mainImg: this.imgURLs[0],
+      mainImg: this.props.data.imgURLs[0],
+      mainImgDimensions: this.props.data.imgDimensions[0]
     }
     this.handleThumbnailHover = this.handleThumbnailHover.bind(this);
   }
 
+  componentDidUpdate(prevProps){
+    if (this.props.data.imgURLs[0] !== prevProps.data.imgURLs[0]){
+      this.setState({mainImg: this.props.data.imgURLs[0]});
+    }
+  }
+
   handleThumbnailHover(e){
     const mainImg = e.target.id;
-    this.setState({mainImg});
+    const imgIdx = this.props.data.imgURLs.indexOf(mainImg);
+    const mainImgDimensions = this.props.data.imgDimensions[imgIdx];
+    this.setState({mainImg, mainImgDimensions});
   }
 
   render(){
-    const ImgWidthBuffer = styled.div`
-      width: 40vw;
-      min-width: 285px;
-      max-width: 745px;
-      height: auto;
-      margin: 25px;
-      position: relative;
-      top: -20px;
-      z-index: 1000;
-    `;
-    
-    const ImageDiv = styled.div`
-      display: inline-flex;
-    `;
-
     return (
       <React.Fragment>
         <ImageCol
-          ASIN={this.ASIN}
-          imgURLs={this.imgURLs}
+          ASIN={this.props.data.ASIN}
+          imgURLs={this.props.data.imgURLs}
           mainImg={this.state.mainImg}
           onHover={this.handleThumbnailHover}
         />
-        <img
-          id="HiddenImg"
-          src={`https://hackmazon-images.s3.amazonaws.com/Images/${this.state.mainImg}`}
-          style={{display: 'none'}}
-          onLoad={(e) => {
-            this.setState({
-              bigHeight: e.target.height,
-              bigWidth: e.target.width
-            })
-          }}
-        />
         <ImgWidthBuffer>
         <MainImg
-          bigWidth={this.state.bigWidth}
-          bigHeight={this.state.bigHeight}
+          bigWidth={this.state.mainImgDimensions.width}
+          bigHeight={this.state.mainImgDimensions.height}
           mainImg={this.state.mainImg} />
         </ImgWidthBuffer>
       </React.Fragment>

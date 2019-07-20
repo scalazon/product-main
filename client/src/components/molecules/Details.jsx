@@ -8,13 +8,13 @@ import DetailsHead from './DetailsHead.jsx';
 export default function Details(props){
   const DetailsDiv = styled.div`
     min-width: 370px;
-    width: 40vw;
-    max-width: 980px;
+    width: 36vw;
+    max-width: 960px;
     padding-right: 63px;
     line-height: 19px;
     z-index: 0;
   `;
-  
+
   return (
     <DetailsDiv>
       <DetailsHead

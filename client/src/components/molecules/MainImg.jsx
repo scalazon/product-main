@@ -4,15 +4,16 @@ import ReactImageMagnify from 'react-image-magnify';
 
 export default function MainImg (props) {
   const ImgContainer = styled.div`
-    width: 30vw;
+    width: 40vw;
     min-width: 285px;
-    max-width: 560px;
+    max-width: 800px;
     height: auto;
     margin: 0 auto;
     position: relative;
     top: -20px;
+    z-index: 1000;
   `;
-
+  const imagesURL = 'https://hackmazon.s3.amazonaws.com/Images/';
   let bigHeight = props.bigHeight;
   let bigWidth = props.bigWidth;
 
@@ -21,7 +22,7 @@ export default function MainImg (props) {
       <ReactImageMagnify {...{
         smallImage: {
           isFluidWidth: true,
-          src: `https://hackmazon-images.s3.amazonaws.com/Images/${props.mainImg}`,
+          src: (imagesURL + props.mainImg),
           lensStyle: {
             background: 'hsla(0, 0%, 100%, .3)',
             border: '1px solid #ccc'
@@ -31,7 +32,7 @@ export default function MainImg (props) {
           }
         },
         largeImage: {
-          src: `https://hackmazon-images.s3.amazonaws.com/Images/${props.mainImg}`,
+          src: (imagesURL + props.mainImg),
           width: bigWidth,
           height: bigHeight
         },
