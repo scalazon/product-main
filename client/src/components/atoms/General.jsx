@@ -75,6 +75,12 @@ export const Row = styled.div`
   justify-content: space-between;
 `;
 
+export const Selected = css`
+  border: 1px solid #e77600;
+  box-shadow: 0 0 3px 2px rgba(228,121,17,.5);
+  outline: 0;
+`;
+
 export const Title = styled.h2`
   color: #222;
   font-size: 21px;

@@ -2,8 +2,11 @@ import React from 'react';
 import {PlayArrow} from 'styled-icons/material/PlayArrow';
 import {Cart} from 'styled-icons/boxicons-regular/Cart';
 import styled, { css } from 'styled-components';
+import { Selected } from './General.jsx';
 
-const ButtonBase = styled.div`
+const ButtonBase = styled.div.attrs((props)=>({
+  tabIndex: 0
+}))`
   height: 31px ;
   width: 230px ;
   box-shadow: 0 1px 0 rgba(255,255,255,.4) inset ;
@@ -17,6 +20,9 @@ const ButtonBase = styled.div`
   text-decoration: none ;
   vertical-align: middle ;
   margin-bottom: 14px ;
+  &:focus-within {
+    ${Selected}
+  }
 `
 
 export const CartButtonBase = styled(ButtonBase)`
@@ -41,19 +47,19 @@ const ButtonInner = styled.span`
 `;
     
 export const CartButtonInner = styled(ButtonInner)`
-  background: linear-gradient(to bottom,#f5d78e,#eeb933) ;
+  background: linear-gradient(to bottom,#f5d78e,#eeb933) !important;
+  border-color: #a88734 #9c7e31 #846a29 !important;
   &:hover {
-    background: linear-gradient(to bottom,#eed088,#e8b22c) ;
+    background: linear-gradient(to bottom,#eed088,#e8b22c) !important;
   }
-  border-color: #a88734 #9c7e31 #846a29 ;
 `;
 
 export const BuyButtonInner = styled(ButtonInner)`
-  background: linear-gradient(to bottom,#e8b97d,#ed9220) !importan;
+  background: linear-gradient(to bottom,#e8b97d,#ed9220) !important;
+  border-color: #ca7c1b #be751a #a56616 !important;
   &:hover {
-    background: linear-gradient(to bottom,#e2b378,#e88d1a) ;
+    background: linear-gradient(to bottom,#e2b378,#e88d1a) !important;
   }
-  border-color: #ca7c1b #be751a #a56616 ;
 `;
 
 const IconStyle = css`

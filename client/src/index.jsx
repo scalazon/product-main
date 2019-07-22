@@ -42,6 +42,9 @@ class Main extends Component {
   }
 
   addToCart(e){
+    setTimeout(()=>{
+      if (document.activeElement != document.body) document.activeElement.blur();
+    }, 300);
     const cc = new BroadcastChannel('cart');
     const quantity = document.getElementById('quantitySelect').value;
     const asin = this.state.data.asin;

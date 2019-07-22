@@ -20,8 +20,12 @@ export default function ButtonBox (props){
       <PrimeShippingCopy />
       <PurchaseButton
         type={"cart"}
-        clickHandler={props.clickHandler} />
-      <PurchaseButton type={"BuyNow"} />
+        clickHandler={props.clickHandler}
+      />
+      <PurchaseButton
+        type={"BuyNow"}
+        clickHandler={props.clickHandler}
+      />
     </ButtonBox>
   )
 }

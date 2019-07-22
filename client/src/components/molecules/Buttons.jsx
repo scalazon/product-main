@@ -20,7 +20,7 @@ export default function PurchaseButton(props){
         </CartButtonBase>
       ) : (
         <BuyButtonBase>
-          <BuyButtonInner>
+          <BuyButtonInner onClick={props.clickHandler}>
             <NowIcon />
             <ButtonText>Buy Now</ButtonText>
           </BuyButtonInner>
