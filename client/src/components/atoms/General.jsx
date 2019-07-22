@@ -11,11 +11,6 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   @font-face {
-    font-family: EmberBd;
-    src: url("http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/fonts/AmazonEmber_Bd.ttf");
-  }
-
-  @font-face {
     font-family: EmberRg;
     src: url("http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/fonts/AmazonEmber_Rg.ttf");
   }
@@ -32,10 +27,6 @@ export const GlobalStyles = createGlobalStyle`
   #product-main a:hover {
     color: #c45500;
     text-decoration: underline;
-  }
-
-  #product-main {
-    box-sizing: content-box !important;
   }
 
   *, ::before, ::after {
@@ -82,6 +73,12 @@ export function QuantitySelect(){
 export const Row = styled.div`
   display: flex;
   justify-content: space-between;
+`;
+
+export const Selected = css`
+  border: 1px solid #e77600;
+  box-shadow: 0 0 3px 2px rgba(228,121,17,.5);
+  outline: 0;
 `;
 
 export const Title = styled.h2`

@@ -27,10 +27,6 @@ class Main extends Component {
     bc.onmessage = (ev) => {
       this.getData(ev.data)
     };
-    // var bc2 = new BroadcastChannel('add-to');
-    // bc2.onmessage = (ev) => {
-    //   this.getData(ev.data)
-    // };
   }
 
   getData(ASIN){
@@ -46,6 +42,9 @@ class Main extends Component {
   }
 
   addToCart(e){
+    setTimeout(()=>{
+      if (document.activeElement != document.body) document.activeElement.blur();
+    }, 300);
     const cc = new BroadcastChannel('cart');
     const quantity = document.getElementById('quantitySelect').value;
     const asin = this.state.data.asin;

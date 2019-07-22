@@ -10,10 +10,11 @@ export default function Details(props){
     min-width: 370px;
     width: 36vw;
     max-width: 960px;
-    padding-right: 63px;
+    margin: 10px 63PX 0 15PX; 
     line-height: 19px;
     z-index: 0;
   `;
+    // padding-right: 63px;
 
   return (
     <DetailsDiv>

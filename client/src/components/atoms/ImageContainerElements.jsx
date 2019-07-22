@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import React from 'react';
+import { Selected } from './General.jsx';
 
 const ThumbNail = css`
   z-index: 100000;
@@ -19,8 +20,7 @@ export const UnselectedThumbnail = styled.img`
 
 export const SelectedThumbnail = styled.img`
   ${ThumbNail}
-  border: 1px solid #e77600;
-  box-shadow: 0 0 3px 2px rgba(228,121,17,.5);
+  ${Selected}
 `;
 
 export const ImgWidthBuffer = styled.div`
