@@ -23,10 +23,12 @@
   },
   "homepage": "https://github.com/hackmazon/product-main#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "eslint": "^6.0.1",
     "express": "^4.17.1",
+    "image-size": "^0.7.4",
     "mongodb": "^3.2.7",
     "mongoose": "^5.6.4",
     "pure-react-carousel": "^1.21.1",

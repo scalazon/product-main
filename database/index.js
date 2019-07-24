@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const conn = require('./dbcon.js');
-//const sizeOf = require('image-size');
+const sizeOf = require('image-size');
 const path = require('path');
 const fs = require('fs');
 
@@ -69,33 +69,33 @@ module.exports.add = (product) => {
     .catch(console.error)
 }
 
- // module.exports.addBatch = (JSONarray) => {
- //   const directoryPath = path.resolve(__dirname, '../../Images/');
- //   return fs.readdir(directoryPath, function (err, files) {
- //     if (err) {
- //         return console.log('Unable to scan directory: ' + err);
- //     }
- //     let dimensionMap = {};
- //     files.reduce((acc, file) => {
- //       const sizes = sizeOf(path.resolve(directoryPath, file));
- //       delete sizes['type'];
- //       const asin = file.split('_')[0];
- //       if (acc[asin] === undefined){
- //         acc[asin] = [sizes];
- //       }else {
- //         acc[asin].push(sizes);
- //       }
- //       console.log(asin, acc[asin]);
- //       return acc
- //     }, dimensionMap);
- //     const products = JSONarray.map(product => {
- //       if (essentialProps.every((prop) => product.hasOwnProperty(prop))) {
- //         clean(product);
- //         product.imgDimensions = dimensionMap[product.asin];
- //         console.log(product);
- //         return product
- //       }
- //     });
- //     return Promise.all(products.map(prod => addToDB(prod)))
- //   });
- // }
+ module.exports.addBatch = (JSONarray) => {
+   const directoryPath = path.resolve(__dirname, '../../testImages/');
+   return fs.readdir(directoryPath, function (err, files) {
+     if (err) {
+         return console.log('Unable to scan directory: ' + err);
+     }
+     let dimensionMap = {};
+     files.reduce((acc, file) => {
+       const sizes = sizeOf(path.resolve(directoryPath, file));
+       delete sizes['type'];
+       const asin = file.split('_')[0];
+       if (acc[asin] === undefined){
+         acc[asin] = [sizes];
+       }else {
+         acc[asin].push(sizes);
+       }
+       console.log(asin, acc[asin]);
+       return acc
+     }, dimensionMap);
+     const products = JSONarray.map(product => {
+       if (essentialProps.every((prop) => product.hasOwnProperty(prop))) {
+         clean(product);
+         product.imgDimensions = dimensionMap[product.asin];
+         console.log(product);
+         return product
+       }
+     });
+     return Promise.all(products.map(prod => addToDB(prod)))
+   });
+ }
