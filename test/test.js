@@ -2,52 +2,52 @@ const request = require('supertest');
 const app = require('../server/app.js');
 const path = require('path');
 const db = require(path.resolve(__dirname, '../database/index.js'));
+const axios = require('axios');
 
 
+const testProduct =
+{
+  "bulletPoints": [
+    "bullet1",
+    "bullet2"
+  ],
+  "imgURLs": [
+    "B075H7Z5L8_1.jpg",
+    "B075H7Z5L8_2.jpg",
+    "B075H7Z5L8_3.jpg",
+    "B075H7Z5L8_4.jpg"
+  ],
+  "asin": "B075H7Z5L8",
+  "productTitle": "Literally some thing",
+  "price": 1200,
+  "category": "TestCat",
+  "attributes": "Attributes",
+  "totalImages": 4,
+  "imgDimensions": [
+    {
+      "_id": "5d38c52a8c1c804a6931a37c",
+      "height": 1000,
+      "width": 1000
+    },
+    {
+      "_id": "5d38c52a8c1c804a6931a37b",
+      "height": 1000,
+      "width": 1000
+    },
+    {
+      "_id": "5d38c52a8c1c804a6931a37a",
+      "height": 1000,
+      "width": 1000
+    },
+    {
+      "_id": "5d38c52a8c1c804a6931a379",
+      "height": 1000,
+      "width": 1000
+    }
+  ],
+  "__v": 0
+}
 beforeAll(() => {
-  const testProduct =
-  {
-    "bulletPoints": [
-      "bullet1",
-      "bullet2"
-    ],
-    "imgURLs": [
-      "B075H7Z5L8_1.jpg",
-      "B075H7Z5L8_2.jpg",
-      "B075H7Z5L8_3.jpg",
-      "B075H7Z5L8_4.jpg"
-    ],
-    "_id": "5d38c52a8c1c804a6931a378",
-    "asin": "B075H7Z5L8",
-    "productTitle": "Literally some thing",
-    "price": 1200,
-    "category": "TestCat",
-    "attributes": "Attributes",
-    "totalImages": 4,
-    "imgDimensions": [
-      {
-        "_id": "5d38c52a8c1c804a6931a37c",
-        "height": 1000,
-        "width": 1000
-      },
-      {
-        "_id": "5d38c52a8c1c804a6931a37b",
-        "height": 1000,
-        "width": 1000
-      },
-      {
-        "_id": "5d38c52a8c1c804a6931a37a",
-        "height": 1000,
-        "width": 1000
-      },
-      {
-        "_id": "5d38c52a8c1c804a6931a379",
-        "height": 1000,
-        "width": 1000
-      }
-    ],
-    "__v": 0
-  }
   db.add(testProduct)
 })
 
@@ -100,3 +100,11 @@ describe('Test the products detail endpoint', () => {
       })
   });
 });
+
+test('Test the post single product endpoint', () => {
+  return axios.post('http://localhost:5000/products/B075H7Z5L8', testProduct)
+  .then(res => {
+    expect(res.data).toEqual('Product has been added');
+  })
+  expect.assertions(1);
+})
