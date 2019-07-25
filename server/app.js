@@ -23,6 +23,7 @@ app.get('/products/:asin', (req, res) => {
    .catch(console.error)
  });
 
+ // Then is failing => Research
  app.post('/products', (req, res) => {
    console.log(req.body)
    prods.addBatch(req.body)
