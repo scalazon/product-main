@@ -101,10 +101,19 @@ describe('Test the products detail endpoint', () => {
   });
 });
 
-test('Test the post single product endpoint', () => {
-  return axios.post('http://localhost:5000/products/B075H7Z5L8', testProduct)
-  .then(res => {
-    expect(res.data).toEqual('Product has been added');
-  })
-  expect.assertions(1);
-})
+describe('Test the add single product endpoint', () => {
+  afterAll(async (done) => {
+    setImmediate(done);
+  });
+
+  test('It should add a product and respond with "Product has been added"', () => {
+    return request(app)
+      .post("/products/B075H7Z5L8")
+      .send(testProduct)
+      .set('Accept', 'application/json')
+      .expect(200)
+      .then(res => {
+        expect(res.text).toEqual('Product has been added')
+      })
+  });
+});
