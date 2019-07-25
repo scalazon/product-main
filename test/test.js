@@ -1,5 +1,54 @@
 const request = require('supertest');
 const app = require('../server/app.js');
+const db = require(path.resolve(__dirname, '../database/index.js'));
+
+
+beforeAll(() => {
+  const testProduct =
+  {
+    "bulletPoints": [
+      "bullet1",
+      "bullet2"
+    ],
+    "imgURLs": [
+      "B075H7Z5L8_1.jpg",
+      "B075H7Z5L8_2.jpg",
+      "B075H7Z5L8_3.jpg",
+      "B075H7Z5L8_4.jpg"
+    ],
+    "_id": "5d38c52a8c1c804a6931a378",
+    "asin": "B075H7Z5L8",
+    "productTitle": "Literally some thing",
+    "price": 1200,
+    "category": "TestCat",
+    "attributes": "Attributes",
+    "totalImages": 4,
+    "imgDimensions": [
+      {
+        "_id": "5d38c52a8c1c804a6931a37c",
+        "height": 1000,
+        "width": 1000
+      },
+      {
+        "_id": "5d38c52a8c1c804a6931a37b",
+        "height": 1000,
+        "width": 1000
+      },
+      {
+        "_id": "5d38c52a8c1c804a6931a37a",
+        "height": 1000,
+        "width": 1000
+      },
+      {
+        "_id": "5d38c52a8c1c804a6931a379",
+        "height": 1000,
+        "width": 1000
+      }
+    ],
+    "__v": 0
+  }
+  db.add(testProduct)
+})
 
 describe('Test the root path', () => {
   afterAll(async (done) => {
