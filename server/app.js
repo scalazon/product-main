@@ -36,7 +36,7 @@ app.get('/products', (req, res) => {
 app.post('/products', (req, res) => {
   //  console.log(req.body)
   let promises = prods.addBatch(req.body);
-  console.log(promises);
+  // console.log(promises);
   Promise.all(promises)
     .then(result => res.send('Products added'))
     .catch((err) => {
