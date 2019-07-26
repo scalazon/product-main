@@ -73,6 +73,17 @@ module.exports.add = (product) => {
     })
 }
 
+// New function for bulk addition to DB
+module.exports.bigBatch = (arr, cb) =>{
+  return Product.insertMany(arr)
+    .then(result => {
+      return 'Something got done'
+    })
+    .catch(fail => {
+      return 'Youu messed up'
+    })
+}
+
 module.exports.addBatch = (JSONarray) => {
   const products = JSONarray.map(product => {
     if (essentialProps.every((prop) => product.hasOwnProperty(prop))) {
