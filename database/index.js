@@ -85,5 +85,5 @@ module.exports.addBatch = (JSONarray) => {
   console.log('Promises are', promises);
   return promises;
   // return products.map(prod => addToDB(prod));
-  return Promise.all(products.map(prod => addToDB(prod)));
+  // return Promise.all(products.map(prod => addToDB(prod)));
 }
