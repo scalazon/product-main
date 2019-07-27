@@ -42,6 +42,11 @@ module.exports.get = (asin) => (
     .catch(console.error)
 )
 
+module.exports.getSome = () => (
+  Product.find({}).limit(100)
+    .catch(console.error)
+);
+
 module.exports.getAll = () => (
   Product.find({})
     .catch(console.error)

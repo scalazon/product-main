@@ -36,8 +36,12 @@ app.post('/products/:asin', (req, res) => {
     .catch(() => res.end())
 });
 
-
-app.get('/products/random', )
+app.get('/products', (req, res) => {
+  console.log('Getting some items:')
+  prods.getSome()
+    .then(products => res.json(products))
+    .catch(console.error)
+});
 
 // Then is failing => Research
 app.post('/products', (req, res) => {
