@@ -95,7 +95,6 @@ describe('Test the products detail endpoint', () => {
         expect(res.body).toHaveProperty('asin')
         expect(res.body).toHaveProperty('productTitle')
         expect(res.body).toHaveProperty('price')
-        expect(res.body).toHaveProperty('category')
         expect(res.body).toHaveProperty('totalImages')
       })
   });
