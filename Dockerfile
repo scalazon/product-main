@@ -15,6 +15,7 @@ COPY . .
 
 ENV NODE_ENV=production
 ENV PORT=5000
+ENV DBURI=mongodb://mongo:27017/productMain
 
 EXPOSE 5000
 CMD [ "npm", "run", "start" ]
