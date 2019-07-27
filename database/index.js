@@ -38,12 +38,12 @@ const clean = (product) => {
 }
 
 module.exports.get = (asin) => (
-  Product.find({ asin }).limit(1)
+  Product.find({ asin }, {_id:0, __v:0, category:0}).limit(1).lean()
     .catch(console.error)
 )
 
 module.exports.getSome = () => (
-  Product.find({}).limit(100)
+  Product.find({}, {_id:0, __v:0, category:0}).limit(100).lean()
     .catch(console.error)
 );
 
