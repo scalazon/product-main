@@ -11,6 +11,13 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use('/', express.static(path.resolve(__dirname, '../client/dist')));
 
+app.get('/products', (req, res) => {
+  console.log('Getting some items:')
+  prods.getSome()
+    .then(products => res.json(products))
+    .catch(console.error)
+});
+
 app.get('/products/random', (req, res) => {
   let asin = Math.floor(Math.random() * 10000000) + 1;
   // let asin = 1500000;
@@ -19,6 +26,7 @@ app.get('/products/random', (req, res) => {
     .then(products => res.json(products[0]))
     .catch(console.error)
 });
+
 
 app.get('/products/:asin', (req, res) => {
   console.log('getting a specific product')
@@ -36,12 +44,6 @@ app.post('/products/:asin', (req, res) => {
     .catch(() => res.end())
 });
 
-app.get('/products', (req, res) => {
-  console.log('Getting some items:')
-  prods.getSome()
-    .then(products => res.json(products))
-    .catch(console.error)
-});
 
 // Then is failing => Research
 app.post('/products', (req, res) => {

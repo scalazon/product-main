@@ -4,7 +4,7 @@ const faker = require('faker');
 console.log('Started at:', new Date);
 (async () => {
 
-  for (let i = 8000000; i < 10000000; i += 100) {
+  for (let i = 1; i < 10000000; i += 100) {
     // console.log('Creating asin:', i)
     let all = [];
     for (let k = i; k < i + 100; k++) {

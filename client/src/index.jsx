@@ -10,7 +10,7 @@ class Main extends Component {
   constructor(props){
     super(props)
     // this.apiURL = 'http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/products/';
-    this.apiURL = 'http://localhost:5000/products/';
+    this.apiURL = '/products/';
 
     this.statsAPI = 'http://reviews-dev.us-west-2.elasticbeanstalk.com/summaries/'
     this.defaultASIN = 'B075H7Z5L8';
