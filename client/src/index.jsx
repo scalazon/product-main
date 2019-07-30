@@ -9,8 +9,8 @@ import BuyBox from './components/molecules/BuyBox.jsx';
 class Main extends Component {
   constructor(props){
     super(props)
-    this.apiURL = 'http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/products/';
-    // this.apiURL = '/products/';
+    // this.apiURL = 'http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/products/';
+    this.apiURL = '/products/';
 
     this.statsAPI = 'http://reviews-dev.us-west-2.elasticbeanstalk.com/summaries/'
     this.defaultASIN = 'B075H7Z5L8';
@@ -25,6 +25,7 @@ class Main extends Component {
   }
 
   componentDidMount(){
+    console.log('Trying to get data from', this.apiURL, this.defaultASIN)
     var bc = new BroadcastChannel('product-change');
     bc.onmessage = (ev) => {
       this.getData(ev.data)
@@ -38,10 +39,13 @@ class Main extends Component {
       fetch(this.statsAPI+ 'B075H7Z5L8').then(res => res.json())
       ])
       .then(promises => {
+        console.log('Promises returned:', promises)
         let data = promises[0];
         let stats = promises[1];
         this.setState({data, stats, isLoading: false})})
-      .catch(console.error);
+      .catch(err => {
+        console.log('Error getting data', err)
+      });
   }
 
   addToCart(e){

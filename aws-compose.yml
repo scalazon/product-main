@@ -1,23 +1,29 @@
-mongo:
-  container_name: mongo
-  image: mongo
-  cpu_shares: 100
-  mem_limit: 262144000
-  # volumes:
-  #   - opt/data/mongo_home:/data/db
-  ports:
-    - "27017:27017"
-app:
-  container_name: app
-  image: bpdavitt/product-main
-  cpu_shares: 100
-  mem_limit: 262144000
-  ports:
-    - "80:5000"
-  links:
-    - mongo
+version: '2'
+services:
+  # mongo:
+  #   container_name: mongo
+  #   image: mongo
+  #   cpu_shares: 100
+  #   mem_limit: 262144000
+  #   volumes:
+  #   #   # - opt/data/mongo_home:/data/db
+  #     - data:/dev/xvda
+  #   ports:
+  #     - "27017:27017"
+  app:
+    container_name: app
+    image: bpdavitt/product-main
+    cpu_shares: 100
+    mem_limit: 262144000
+    ports:
+      - "80:5000"
+#     links:
+#       - mongo
 # volumes:
-#   - "./data:/data/db"
+#   data:
+    
+#   mongodata:
+#     driver: local
 # volumes:
 #   - opt/data/mongo_home
 
