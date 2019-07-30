@@ -33,6 +33,7 @@ class Main extends Component {
   }
 
   getData(ASIN){
+    console.log('Trying to get data from', this.apiURL, this.defaultASIN)
     return Promise.all([
       fetch(this.apiURL + ASIN).then(res => res.json()),
       // Hardcode this with a working ASIN for now, will need to modify once other services have this data
