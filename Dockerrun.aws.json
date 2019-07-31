@@ -1,7 +1,7 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Name": "zonagilreath/hackmazon-product-main",
+    "Name": "bpdavitt/product-main",
     "Update": "true"
   },
   "Ports": [
