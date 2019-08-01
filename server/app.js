@@ -24,7 +24,7 @@ app.get('/products', (req, res) => {
 app.get('/products/random', (req, res) => {
   let asin = Math.floor(Math.random() * 10000000) + 1;
   // let asin = 1500000;
-  console.log('Getting a random item:', asin)
+  // console.log('Getting a random item:', asin)
   db.get(asin)
     .then(products => res.json(products[0]))
     .catch(console.error)
