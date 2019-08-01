@@ -3,9 +3,9 @@ node_js:
  - "node"
 services: 
   - mongodb
-  - postgresql
+  # - postgresql
 cache:
   directories:
     - "node_modules"
-before_script:
-  - psql -c "CREATE DATABASE productMain;" -U postgres
+# before_script:
+#   - psql -c "CREATE DATABASE productMain;" -U postgres

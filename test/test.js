@@ -1,8 +1,8 @@
 const request = require('supertest');
 const app = require('../server/app.js');
 const path = require('path');
-// const db = require(path.resolve(__dirname, '../database/index.js'));
-const db = require(path.resolve(__dirname, '../database/pgindex.js'));
+const db = require(path.resolve(__dirname, '../database/index.js'));
+// const db = require(path.resolve(__dirname, '../database/pgindex.js'));
 
 const axios = require('axios');
 

@@ -4,7 +4,7 @@ const pool = new Pool({
   host: 'localhost',
   port: 5432,
   database: 'productMain',
-  // password: 'postgres'
+  password: 'postgres'
 })
 
 const getSome = () => {

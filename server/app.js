@@ -4,8 +4,8 @@ const app = express();
 const cors = require('cors');
 const path = require('path');
 const bodyParser = require('body-parser');
-// const db = require(path.resolve(__dirname, '../database/index.js'));
-const db = require(path.resolve(__dirname, '../database/pgindex.js'));
+const db = require(path.resolve(__dirname, '../database/index.js'));
+// const db = require(path.resolve(__dirname, '../database/pgindex.js'));
 
 
 app.use(compression());
@@ -21,29 +21,12 @@ app.get('/products', (req, res) => {
 });
 
 // *****************  For mongoDB return **************
-// app.get('/products/random', (req, res) => {
-//   let asin = Math.floor(Math.random() * 10000000) + 1;
-//   // let asin = 1500000;
-//   console.log('Getting a random item:', asin)
-//   db.get(asin)
-//     .then(products => res.json(products[0]))
-//     .catch(console.error)
-// });
-
-
-// app.get('/products/:asin', (req, res) => {
-//   console.log('getting a specific product')
-//   db.get(req.params.asin)
-//     .then(products => res.json(products[0]))
-//     .catch(console.error)
-// });   *************** End MongoDB fx *************
-
 app.get('/products/random', (req, res) => {
   let asin = Math.floor(Math.random() * 10000000) + 1;
   // let asin = 1500000;
   console.log('Getting a random item:', asin)
   db.get(asin)
-    .then(product => res.json(product))
+    .then(products => res.json(products[0]))
     .catch(console.error)
 });
 
@@ -51,9 +34,30 @@ app.get('/products/random', (req, res) => {
 app.get('/products/:asin', (req, res) => {
   console.log('getting a specific product')
   db.get(req.params.asin)
-    .then(product => res.json(product))
+    .then(products => res.json(products[0]))
     .catch(console.error)
-});
+});   
+// *************** End MongoDB fx *************
+
+
+// ************* Start psql fx ************
+// app.get('/products/random', (req, res) => {
+//   let asin = Math.floor(Math.random() * 10000000) + 1;
+//   // let asin = 1500000;
+//   console.log('Getting a random item:', asin)
+//   db.get(asin)
+//     .then(product => res.json(product))
+//     .catch(console.error)
+// });
+
+
+// app.get('/products/:asin', (req, res) => {
+//   console.log('getting a specific product')
+//   db.get(req.params.asin)
+//     .then(product => res.json(product))
+//     .catch(console.error)
+// });
+// **************** End psql fx **************
 
 app.post('/products/:asin', (req, res) => {
   db.add(req.body)
