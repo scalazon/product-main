@@ -7,3 +7,5 @@ services:
 cache:
   directories:
     - "node_modules"
+before_script:
+  - psql -c "CREATE DATABASE productMain;" -U postgres
