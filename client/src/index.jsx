@@ -9,9 +9,11 @@ import BuyBox from './components/molecules/BuyBox.jsx';
 class Main extends Component {
   constructor(props){
     super(props)
-    this.apiURL = 'http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/products/';
+    // this.apiURL = 'http://hackmazon-product-main.3pcivarzxb.us-east-1.elasticbeanstalk.com/products/';
+    this.apiURL = '/products/';
+
     this.statsAPI = 'http://reviews-dev.us-west-2.elasticbeanstalk.com/summaries/'
-    this.defaultASIN = 'B07PSQKDDZ';
+    this.defaultASIN = 'B075H7Z5L8';
     this.state = {
       data: null,
       stats: null,
@@ -23,6 +25,7 @@ class Main extends Component {
   }
 
   componentDidMount(){
+    console.log('Trying to get data from', this.apiURL, this.defaultASIN)
     var bc = new BroadcastChannel('product-change');
     bc.onmessage = (ev) => {
       this.getData(ev.data)
@@ -30,15 +33,20 @@ class Main extends Component {
   }
 
   getData(ASIN){
+    console.log('Trying to get data from', this.apiURL, this.defaultASIN)
     return Promise.all([
       fetch(this.apiURL + ASIN).then(res => res.json()),
-      fetch(this.statsAPI+ ASIN).then(res => res.json())
+      // Hardcode this with a working ASIN for now, will need to modify once other services have this data
+      fetch(this.statsAPI+ 'B075H7Z5L8').then(res => res.json())
       ])
       .then(promises => {
+        console.log('Promises returned:', promises)
         let data = promises[0];
         let stats = promises[1];
         this.setState({data, stats, isLoading: false})})
-      .catch(console.error);
+      .catch(err => {
+        console.log('Error getting data', err)
+      });
   }
 
   addToCart(e){

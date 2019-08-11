@@ -4,7 +4,9 @@ import styled, {css} from 'styled-components';
 import {SelectedThumbnail, UnselectedThumbnail, ImgColDiv} from '../atoms/ImageContainerElements.jsx';
 
 export default function ImageCol(props){
-  const thumbnailURL = 'https://hackmazon-thumbs.s3.amazonaws.com/Images/'
+  // const thumbnailURL = 'https://hackmazon-thumbs.s3.amazonaws.com/Images/'
+  const thumbnailURL = '';
+
   return (
     <ImgColDiv>
       {props.imgURLs.map((imgURL, idx)=> (

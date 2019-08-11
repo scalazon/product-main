@@ -13,7 +13,9 @@ export default function MainImg (props) {
     top: -20px;
     z-index: 1000;
   `;
-  const imagesURL = 'https://hackmazon.s3.amazonaws.com/Images/';
+  // const imagesURL = 'https://hackmazon.s3.amazonaws.com/Images/';
+  const imagesURL = '';
+
   let bigHeight = props.bigHeight;
   let bigWidth = props.bigWidth;
 

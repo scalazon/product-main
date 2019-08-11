@@ -1,5 +1,5 @@
 node_modules
-config.js
+# config.js
 dbdevserver.js
 npm-debug.log# Elastic Beanstalk Files
 .elasticbeanstalk/*
@@ -32,3 +32,4 @@ npm-debug.log# Elastic Beanstalk Files
 .elasticbeanstalk/*
 .git
 .gitignore
+.aws
